@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavanya's Portfolio Style guide</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Fixed blush blur — stays centred behind all content on scroll -->
+    <div class="bg_blur"></div>
+
+    <!-- HEADER / NAV — links to section anchors on this page -->
+    <header>
+        <nav class="header_bar">
+            <a class="header_logo" href="index.html">
+                <h1>Lavanya's</h1>
+            </a>
+
+            <div class="header_nav_bar">
+                <a class="nav_link" href="#interactive_elements">Interactive Elements</a>
+                <a class="nav_link" href="#text_styling">Text Styling</a>
+                <a class="nav_link" href="#combined_elements">Combined Elements</a>
+                <a class="nav_link" href="#my_ethos">My Ethos</a>
+                <a class="nav_link" href="#templates">Templates</a>
+                <a class="nav_link" href="#citations">Citations</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="style_guide_page">
+
+        <!-- Page title -->
+        <div class="sg_section">
+            <h1>Style Guide</h1>
+            <p class="mt_sm">A visual reference for the design language of this portfolio — intentional, soft-spoken, and cohesive.</p>
+        </div>
+
+
+        <!-- 1. INTERACTIVE ELEMENTS -->
+        <section id="interactive_elements">
+            <div class="sg_section">
+                <p class="sg_section_label">01 — Interactive Elements</p>
+
+
+                <!-- In-text link -->
+                <div class="element">
+                    <h3>In-text link</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>&lt;p&gt;This is an &lt;a class="in_text_link" href="#"&gt;in-text link&lt;/a&gt;.&lt;/p&gt;</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <p>This is an <a class="in_text_link" href="#">in-text link</a>. It sits quietly within prose without demanding attention.</p>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.in_text_link</p>
+                </div>
+
+
+                <!-- Navigation link -->
+                <div class="element">
+                    <h3>Navigation link</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>&lt;div class="header_nav_bar"&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;a class="nav_link" href="#interactive_elements"&gt;Interactive Elements&lt;/a&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <div class="header_nav_bar">
+                        <a class="nav_link" href="#interactive_elements">Interactive Elements</a>
+                        <a class="nav_link" href="#text_styling">Text Styling</a>
+                        <a class="nav_link" href="#combined_elements">Combined Elements</a>
+                    </div>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.nav_link</p>
+                </div>
+
+
+                <!-- Submit button -->
+                <div class="element">
+                    <h3>A submit button for forms</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>&lt;a href="#" class="primary_button"&gt;Send Message&lt;/a&gt;</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <a href="#" class="primary_button">
+                        Send Message
+                        <img class="btn_arrow" src="img/right_arrow.png" alt="">
+                    </a>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.primary_button</p>
+                </div>
+
+
+                <!-- Reset button -->
+                <div class="element">
+                    <h3>A reset button for forms</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>&lt;a href="#" class="secondary_button"&gt;Reset&lt;/a&gt;</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <a href="#" class="secondary_button">Reset</a>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.secondary_button</p>
+                </div>
+
+
+                <!-- Text input field with label -->
+                <div class="element">
+                    <h3>Text input field with label</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>&lt;div class="form_group"&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;label for="full_name"&gt;Full Name&lt;/label&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;input id="full_name" type="text" placeholder="Lavanya Sharma"&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <div class="form_group" style="max-width: 340px;">
+                        <label for="sg_full_name">Full Name</label>
+                        <input id="sg_full_name" type="text" placeholder="Lavanya Sharma">
+                    </div>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.form_group</p>
+                </div>
+
+
+                <!-- Radio input field with label -->
+                <div class="element">
+                    <h3>Radio input field with label</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>&lt;div class="radio_group"&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;div class="radio_group_title"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="discipline" id="ui_ux" value="ui_ux"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="ui_ux"&gt;UI/UX Design&lt;/label&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;/div&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;div class="radio_group_detail"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Designing clear, considered digital experiences.&lt;/p&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;/div&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <div class="radio_group">
+                        <div class="radio_group_title">
+                            <input type="radio" name="sg_discipline" id="sg_ui_ux" value="ui_ux" checked>
+                            <label for="sg_ui_ux">UI/UX Design</label>
+                        </div>
+                        <div class="radio_group_detail">
+                            <p>Designing clear, considered digital experiences.</p>
+                        </div>
+                    </div>
+                    <div class="radio_group">
+                        <div class="radio_group_title">
+                            <input type="radio" name="sg_discipline" id="sg_game" value="game">
+                            <label for="sg_game">Game Design</label>
+                        </div>
+                        <div class="radio_group_detail">
+                            <p>Building worlds through narrative, mechanics, and play.</p>
+                        </div>
+                    </div>
+                    <div class="radio_group">
+                        <div class="radio_group_title">
+                            <input type="radio" name="sg_discipline" id="sg_illustration" value="illustration">
+                            <label for="sg_illustration">Illustration</label>
+                        </div>
+                        <div class="radio_group_detail">
+                            <p>Expressing ideas through hand-crafted visual storytelling.</p>
+                        </div>
+                    </div>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.radio_group_title</p>
+                    <p class="css_selector">.radio_group_detail</p>
+                </div>
+
+
+                <!-- Image as a link -->
+                <div class="element">
+                    <h3>An image as a link</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>&lt;div class="project_list_grid"&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;a class="project_card" href="projects.html"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="project_card_img"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="img/dinely_cover.png" alt="Dinely project"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="project_card_text"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&gt;Dinely&lt;/h4&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;A catering e-commerce experience.&lt;/p&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;/a&gt;</code>
+                        <code>&lt;/div&gt;</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <div class="project_list_grid" style="grid-template-columns: repeat(2, 1fr); max-width: 560px;">
+                        <a class="project_card" href="#">
+                            <div class="project_card_img">
+                                <img src="img/background_blur_circle.png" alt="Dinely project">
+                            </div>
+                            <div class="project_card_text">
+                                <h4>Dinely</h4>
+                                <p>A catering e-commerce experience designed for seamless event ordering.</p>
+                            </div>
+                        </a>
+                        <a class="project_card" href="#">
+                            <div class="project_card_img">
+                                <img src="img/background_blur_circle.png" alt="Wandmaker's Atelier">
+                            </div>
+                            <div class="project_card_text">
+                                <h4>Wandmaker's Atelier</h4>
+                                <p>An interactive game exploring narrative and world-building.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.project_card</p>
+                    <p class="css_selector">.project_card_img</p>
+                    <p class="css_selector">.project_card_text</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 2. TEXT STYLING -->
+        <section id="text_styling">
+            <div class="sg_section">
+                <p class="sg_section_label">02 — Text Styling</p>
+
+
+                <!-- Fonts -->
+                <div class="element">
+                    <h3>Fonts</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Manrope:wght@300;400;500;600;700&display=swap');</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <h1>Corinthia — Display</h1>
+                    <p class="mt_sm">Manrope Regular 400 — body text, descriptions, captions.</p>
+                    <p style="font-weight: 500;" class="mt_xs">Manrope Medium 500 — labels, h4.</p>
+                    <p style="font-weight: 700;" class="mt_xs">Manrope Bold 700 — h2, h3, section headings.</p>
+                    <p style="font-weight: 300;" class="mt_xs">Manrope Light 300 — input placeholders.</p>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">--font_display &nbsp;·&nbsp; --font_ui</p>
+                </div>
+
+
+                <!-- Headings and paragraphs -->
+                <div class="element">
+                    <h3>Headings &amp; Paragraph</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>&lt;h1&gt;Lavanya's&lt;/h1&gt;</code>
+                        <code>&lt;h2&gt;Heading 2&lt;/h2&gt;</code>
+                        <code>&lt;h3&gt;Heading 3&lt;/h3&gt;</code>
+                        <code>&lt;h4&gt;Heading 4&lt;/h4&gt;</code>
+                        <code>&lt;p&gt;Paragraph text&lt;/p&gt;</code>
+                        <code>&lt;small&gt;Small / caption text&lt;/small&gt;</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <h1>Lavanya's</h1>
+                    <h2 class="mt_sm">Heading 2</h2>
+                    <h3 class="mt_sm">Heading 3</h3>
+                    <h4 class="mt_sm">Heading 4</h4>
+                    <p class="mt_sm">Paragraph — I believe good design is felt before it's understood. Clean, considered, and always purposeful.</p>
+                    <small class="mt_sm" style="display:block;">Small — captions, labels, meta information.</small>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">h1 &nbsp;·&nbsp; h2 &nbsp;·&nbsp; h3 &nbsp;·&nbsp; h4 &nbsp;·&nbsp; p &nbsp;·&nbsp; small</p>
+                </div>
+
+
+                <!-- Numbered list -->
+                <div class="element">
+                    <h3>Numbered List</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>&lt;ol&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;li&gt;Start with curiosity.&lt;/li&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;li&gt;Iterate deliberately.&lt;/li&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;li&gt;Let the work speak.&lt;/li&gt;</code>
+                        <code>&lt;/ol&gt;</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <ol>
+                        <li>Start with curiosity — explore tools, techniques, and unfamiliar territories.</li>
+                        <li>Iterate deliberately — revisit, refine, and remove what doesn't belong.</li>
+                        <li>Let the work speak — clear presentation over self-promotion.</li>
+                        <li>Stay cohesive — every element belongs to the same visual language.</li>
+                    </ol>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">ol &nbsp;·&nbsp; ol li</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 3. COMBINED ELEMENTS -->
+        <section id="combined_elements">
+            <div class="sg_section">
+                <p class="sg_section_label">03 — Combined Elements</p>
+
+
+                <!-- Main navigation -->
+                <div class="element">
+                    <h3>Main Navigation</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>&lt;header&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;nav class="header_bar"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="header_logo" href="index.html"&gt;&lt;h1&gt;Lavanya's&lt;/h1&gt;&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="header_nav_bar"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="index.html"&gt;Home&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="about.html"&gt;About Me&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="projects.html"&gt;Projects&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="contact.html"&gt;Contact&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;/nav&gt;</code>
+                        <code>&lt;/header&gt;</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <nav class="header_bar" style="position: static; border-radius: var(--radius_card);">
+                        <a class="header_logo" href="#">
+                            <h1 style="font-size: 2rem;">Lavanya's</h1>
+                        </a>
+                        <div class="header_nav_bar">
+                            <a class="nav_link" href="#">Home</a>
+                            <a class="nav_link" href="#">About Me</a>
+                            <a class="nav_link" href="#">Projects</a>
+                            <a class="nav_link" href="#">Contact</a>
+                        </div>
+                    </nav>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.header_bar &nbsp;·&nbsp; .header_logo &nbsp;·&nbsp; .header_nav_bar &nbsp;·&nbsp; .nav_link</p>
+                </div>
+
+
+                <!-- Project listing -->
+                <div class="element">
+                    <h3>Project Listing</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Rendered element:</h4>
+                    <div class="project_list_grid">
+                        <a class="project_card" href="#">
+                            <div class="project_card_img">
+                                <img src="img/background_blur_circle.png" alt="Dinely">
+                            </div>
+                            <div class="project_card_text">
+                                <h4>Dinely</h4>
+                                <p>A catering e-commerce experience designed for seamless event ordering.</p>
+                            </div>
+                        </a>
+                        <a class="project_card" href="#">
+                            <div class="project_card_img">
+                                <img src="img/background_blur_circle.png" alt="Wandmaker's Atelier">
+                            </div>
+                            <div class="project_card_text">
+                                <h4>Wandmaker's Atelier</h4>
+                                <p>An interactive game exploring narrative, craft, and world-building.</p>
+                            </div>
+                        </a>
+                        <a class="project_card" href="#">
+                            <div class="project_card_img">
+                                <img src="img/background_blur_circle.png" alt="Project 3">
+                            </div>
+                            <div class="project_card_text">
+                                <h4>Project Name</h4>
+                                <p>A short description of the project and its intent.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.project_list_grid &nbsp;·&nbsp; .project_card</p>
+                </div>
+
+
+                <!-- Project detail -->
+                <div class="element">
+                    <h3>Project Detail</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Rendered element:</h4>
+                    <div class="project_detail_grid">
+                        <div class="project_detail_image" style="position: static;">
+                            <img src="img/background_blur_circle.png" alt="Project detail image">
+                        </div>
+                        <div class="project_detail_info">
+                            <h3>Dinely</h3>
+                            <p>A catering e-commerce platform designed to make event ordering feel as considered as the food itself.</p>
+                            <div class="radio_group">
+                                <div class="radio_group_title">
+                                    <input type="radio" name="sg_project" id="sg_web" value="web" checked>
+                                    <label for="sg_web">Web Application</label>
+                                </div>
+                            </div>
+                            <div class="radio_group">
+                                <div class="radio_group_title">
+                                    <input type="radio" name="sg_project" id="sg_mobile" value="mobile">
+                                    <label for="sg_mobile">Mobile View</label>
+                                </div>
+                            </div>
+                            <div class="button_group">
+                                <a class="primary_button" href="#">
+                                    View Project
+                                    <img class="btn_arrow" src="img/right_arrow.png" alt="">
+                                </a>
+                                <a class="secondary_button" href="#">Back</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.project_detail_grid &nbsp;·&nbsp; .project_detail_image &nbsp;·&nbsp; .project_detail_info</p>
+                </div>
+
+
+                <!-- Contact me -->
+                <div class="element">
+                    <h3>Contact Me</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Rendered element:</h4>
+                    <div class="contact_grid">
+                        <div class="contact_form">
+                            <div class="form_group">
+                                <label for="sg_c_name">Full Name</label>
+                                <input id="sg_c_name" type="text" placeholder="Your name">
+                            </div>
+                            <div class="form_group">
+                                <label for="sg_c_email">Email Address</label>
+                                <input id="sg_c_email" type="email" placeholder="your@email.com">
+                            </div>
+                            <div class="form_group">
+                                <label for="sg_c_msg">Message</label>
+                                <textarea id="sg_c_msg" rows="4" placeholder="What's on your mind?"></textarea>
+                            </div>
+                            <div class="button_group">
+                                <button class="primary_button">Send Message</button>
+                                <button class="secondary_button">Reset</button>
+                            </div>
+                        </div>
+                        <div class="contact_info">
+                            <h4>Let's connect</h4>
+                            <p>Whether it's a project, a question, or just a conversation about design — I'd love to hear from you.</p>
+                            <p><a class="in_text_link" href="mailto:lavanya@sfu.ca">lavanya@sfu.ca</a></p>
+                        </div>
+                    </div>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.contact_grid &nbsp;·&nbsp; .contact_form &nbsp;·&nbsp; .contact_info &nbsp;·&nbsp; .form_group &nbsp;·&nbsp; .button_group</p>
+                </div>
+
+
+                <!-- Footer -->
+                <div class="element">
+                    <h3>Footer</h3>
+                </div>
+
+                <div class="element_detail">
+                    <h4>Code:</h4>
+                    <div class="code_block">
+                        <code>&lt;footer&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;div class="footer_bar"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="footer_logo" href="index.html"&gt;&lt;h1&gt;Lavanya's&lt;/h1&gt;&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="footer_nav"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="contact.html"&gt;Contact&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="style_guide.html"&gt;Style Guide&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="citations.html"&gt;Citations&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="footer_tagline"&gt;Design felt before it's understood.&lt;/p&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;/div&gt;</code>
+                        <code>&lt;/footer&gt;</code>
+                    </div>
+
+                    <h4>Rendered element:</h4>
+                    <div class="footer_bar" style="margin-top: 0; border-radius: var(--radius_card);">
+                        <a class="footer_logo" href="#">
+                            <h1 style="font-size: 1.75rem;">Lavanya's</h1>
+                        </a>
+                        <div class="footer_nav">
+                            <a class="nav_link" href="#">Contact</a>
+                            <a class="nav_link" href="#">Style Guide</a>
+                            <a class="nav_link" href="#">Citations</a>
+                        </div>
+                        <p class="footer_tagline">Design felt before it's understood.</p>
+                    </div>
+
+                    <h4>CSS selector:</h4>
+                    <p class="css_selector">.footer_bar &nbsp;·&nbsp; .footer_logo &nbsp;·&nbsp; .footer_nav &nbsp;·&nbsp; .footer_tagline</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 4. MY ETHOS -->
+        <section id="my_ethos">
+            <div class="sg_section">
+                <p class="sg_section_label">04 — My Ethos</p>
+
+
+                <!-- About me -->
+                <div class="element">
+                    <h3>About Me</h3>
+                </div>
+
+                <div class="element_detail">
+                    <div class="ethos_block">
+                        <p>I'm Lavanya, a third-year Interactive Arts and Technology student at SFU with a love for UI/UX and game design. I believe good design is felt before it's understood — clean, considered, and always purposeful. I'm constantly exploring new tools, techniques, and creative territories, because curiosity is what keeps my work honest. Beyond screens, I pour that same energy into hobbies and art that keep me inspired. Scroll through to catch a glimpse. :D</p>
+                    </div>
+
+                    <h4>Ethos keywords:</h4>
+                    <div class="ethos_keywords">
+                        <div class="ethos_keyword_item">
+                            <h4>Clear</h4>
+                            <p>Every element earns its place. Nothing is decorative for its own sake.</p>
+                        </div>
+                        <div class="ethos_keyword_item">
+                            <h4>Minimal</h4>
+                            <p>Breathing room is a design decision, not an absence of content.</p>
+                        </div>
+                        <div class="ethos_keyword_item">
+                            <h4>Organised</h4>
+                            <p>Consistent structure guides the eye — hierarchy over decoration.</p>
+                        </div>
+                        <div class="ethos_keyword_item">
+                            <h4>Intentional</h4>
+                            <p>Deliberate choices in spacing, type, and tone. Nothing accidental.</p>
+                        </div>
+                        <div class="ethos_keyword_item">
+                            <h4>Soft-spoken</h4>
+                            <p>The work speaks first. The presentation doesn't compete.</p>
+                        </div>
+                        <div class="ethos_keyword_item">
+                            <h4>Cohesive</h4>
+                            <p>Everything belongs to the same visual language — nothing out of place.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Colour palette -->
+                <div class="element">
+                    <h3>Colour Palette</h3>
+                </div>
+
+                <div class="element_detail">
+                    <div class="colour_palette_grid">
+                        <div class="colour_swatch">
+                            <div class="colour_swatch_block" style="background:#FFFEFE;"></div>
+                            <span class="colour_swatch_label">#FFFEFE<br>Background</span>
+                        </div>
+                        <div class="colour_swatch">
+                            <div class="colour_swatch_block" style="background:#FAF9F9;"></div>
+                            <span class="colour_swatch_label">#FAF9F9<br>Surface / Card</span>
+                        </div>
+                        <div class="colour_swatch">
+                            <div class="colour_swatch_block" style="background:#8D6F6F;"></div>
+                            <span class="colour_swatch_label">#8D6F6F<br>Headings</span>
+                        </div>
+                        <div class="colour_swatch">
+                            <div class="colour_swatch_block" style="background:#CCA8A8;"></div>
+                            <span class="colour_swatch_label">#CCA8A8<br>Body Text</span>
+                        </div>
+                        <div class="colour_swatch">
+                            <div class="colour_swatch_block" style="background:#D9BFBF;"></div>
+                            <span class="colour_swatch_label">#D9BFBF<br>Muted / Border</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Icons / shapes -->
+                <div class="element">
+                    <h3>Icons / Shapes</h3>
+                </div>
+
+                <div class="element_detail">
+                    <p>Custom minimal iconography — arrows for navigation and directional cues, a diamond as an interactive hover accent on project cards.</p>
+                    <div class="icon_row mt_md">
+                        <div class="icon_item">
+                            <img src="img/Arrow_1.png" alt="Left arrow">
+                            <small>Arrow (left)</small>
+                        </div>
+                        <div class="icon_item">
+                            <img src="img/right_arrow.png" alt="Right arrow">
+                            <small>Arrow (right)</small>
+                        </div>
+                        <div class="icon_item">
+                            <img src="img/hover_diamond.png" alt="Hover diamond accent">
+                            <small>Hover accent</small>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Images -->
+                <div class="element">
+                    <h3>Images</h3>
+                </div>
+
+                <div class="element_detail">
+                    <p>All project images sit inside cards with a 13px corner radius and subtle scale on hover. The fixed blush blur circle behind all content creates layered atmospheric depth without visual noise — a signature element of this portfolio.</p>
+                    <div class="mt_md">
+                        <img src="img/background_blur_circle.png" alt="Background blur atmosphere" style="border-radius: var(--radius_card); max-width: 320px;">
+                    </div>
+                    <small style="display:block;" class="mt_sm">Background blur circle — position: fixed, opacity 0.55, sits behind all content on scroll.</small>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 5. TEMPLATES -->
+        <section id="templates">
+            <div class="sg_section">
+                <p class="sg_section_label">05 — Templates</p>
+
+                <div class="element_detail">
+                    <h3><a class="in_text_link" href="index.html">Home</a></h3>
+                    <h3><a class="in_text_link" href="about.html">About Me</a></h3>
+                    <h3><a class="in_text_link" href="projects.html">Projects</a></h3>
+                    <h3><a class="in_text_link" href="contact.html">Contact</a></h3>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 6. CITATIONS -->
+        <section id="citations">
+            <div class="sg_section">
+                <p class="sg_section_label">06 — Citations</p>
+
+                <div class="element_detail">
+                    <ol>
+                        <li>Google Fonts. (n.d.). <em>Corinthia</em>. Retrieved from <a class="in_text_link" href="https://fonts.google.com/specimen/Corinthia" target="_blank">fonts.google.com/specimen/Corinthia</a></li>
+                        <li>Google Fonts. (n.d.). <em>Manrope</em>. Retrieved from <a class="in_text_link" href="https://fonts.google.com/specimen/Manrope" target="_blank">fonts.google.com/specimen/Manrope</a></li>
+                        <li>Custom icons and assets — arrows and hover diamond — created for this portfolio.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer_bar">
+            <a class="footer_logo" href="index.html">
+                <h1>Lavanya's</h1>
+            </a>
+
+            <div class="footer_nav">
+                <a class="nav_link" href="contact.html">Contact</a>
+                <a class="nav_link" href="style_guide.html">Style Guide</a>
+                <a class="nav_link" href="citations.html">Citations</a>
+            </div>
+
+            <p class="footer_tagline">Design felt before it's understood.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

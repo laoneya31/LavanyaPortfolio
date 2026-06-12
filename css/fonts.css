@@ -1,0 +1,121 @@
+/* ============================================
+   FONTS.CSS — Lavanya's Portfolio
+   Typefaces: Corinthia (display) · Manrope (ui)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+/* ── Type Scale Variables ── */
+:root {
+    --font_display:     'Corinthia', cursive;
+    --font_ui:          'Manrope', sans-serif;
+
+    --size_h1:          clamp(3rem, 8vw, 6rem);
+    --size_h2:          clamp(1.6rem, 3vw, 2.25rem);
+    --size_h3:          clamp(1.1rem, 2vw, 1.375rem);
+    --size_h4:          1rem;
+    --size_p:           0.9375rem;
+    --size_small:       0.8125rem;
+    --size_code:        0.8rem;
+}
+
+/* ── Base Type Elements ── */
+
+h1 {
+    font-family: var(--font_display);
+    font-size: var(--size_h1);
+    font-weight: 400;
+    color: var(--color_heading);
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+}
+
+h2 {
+    font-family: var(--font_ui);
+    font-size: var(--size_h2);
+    font-weight: 700;
+    color: var(--color_heading);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-family: var(--font_ui);
+    font-size: var(--size_h3);
+    font-weight: 700;
+    color: var(--color_heading);
+    line-height: 1.3;
+}
+
+h4 {
+    font-family: var(--font_ui);
+    font-size: var(--size_h4);
+    font-weight: 500;
+    color: var(--color_heading);
+    line-height: 1.4;
+}
+
+p {
+    font-family: var(--font_ui);
+    font-size: var(--size_p);
+    font-weight: 400;
+    color: var(--color_body);
+    line-height: 1.7;
+}
+
+small {
+    font-family: var(--font_ui);
+    font-size: var(--size_small);
+    font-weight: 400;
+    color: var(--color_muted);
+    line-height: 1.5;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: var(--size_code);
+    color: var(--color_heading);
+    background-color: var(--color_code_bg);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+}
+
+label {
+    font-family: var(--font_ui);
+    font-size: var(--size_small);
+    font-weight: 500;
+    color: var(--color_heading);
+    letter-spacing: 0.02em;
+}
+
+/* ── Numbered List ── */
+
+ol {
+    list-style: none;
+    counter-reset: lavanya_counter;
+    padding-left: 0;
+}
+
+ol li {
+    counter-increment: lavanya_counter;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.4rem 0;
+    font-family: var(--font_ui);
+    font-size: var(--size_p);
+    font-weight: 400;
+    color: var(--color_body);
+    line-height: 1.7;
+}
+
+ol li::before {
+    content: counter(lavanya_counter, decimal-leading-zero);
+    font-family: var(--font_ui);
+    font-size: var(--size_small);
+    font-weight: 600;
+    color: var(--color_muted);
+    min-width: 2rem;
+    padding-top: 0.2rem;
+    flex-shrink: 0;
+}

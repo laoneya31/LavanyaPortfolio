@@ -1,0 +1,153 @@
+/* ============================================
+   LAYOUT.CSS — Lavanya's Portfolio
+   Spacing, page structure, responsive breakpoints
+   ============================================ */
+
+:root {
+    --space_xs:     0.5rem;
+    --space_sm:     1rem;
+    --space_md:     1.75rem;
+    --space_lg:     3rem;
+    --space_xl:     5rem;
+}
+
+/* ── Page spacing helpers ── */
+
+.mt_xs  { margin-top: var(--space_xs); }
+.mt_sm  { margin-top: var(--space_sm); }
+.mt_md  { margin-top: var(--space_md); }
+.mt_lg  { margin-top: var(--space_lg); }
+.mt_xl  { margin-top: var(--space_xl); }
+
+/* ── Flex helpers ── */
+
+.flex_row          { display: flex; flex-direction: row; }
+.flex_col          { display: flex; flex-direction: column; }
+.flex_wrap         { flex-wrap: wrap; }
+.align_center      { align-items: center; }
+.gap_sm            { gap: var(--space_sm); }
+.gap_md            { gap: var(--space_md); }
+.gap_lg            { gap: var(--space_lg); }
+
+/* ── Two-column form row (side by side inputs) ── */
+
+.form_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space_sm);
+}
+
+
+/* ============================================
+   RESPONSIVE — Tablet (≤ 900px)
+   ============================================ */
+
+@media (max-width: 900px) {
+
+    .header_bar {
+        padding: 1rem 1.5rem;
+    }
+
+    .project_list_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project_detail_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project_detail_image {
+        position: static;
+    }
+
+    .contact_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ethos_keywords {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer_bar {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .footer_tagline {
+        text-align: left;
+    }
+
+    .style_guide_page {
+        padding: 0 1.5rem;
+    }
+}
+
+
+/* ============================================
+   RESPONSIVE — Mobile (≤ 600px)
+   ============================================ */
+
+@media (max-width: 600px) {
+
+    .header_bar {
+        padding: 0.875rem 1rem;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .header_nav_bar {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .project_list_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form_row {
+        grid-template-columns: 1fr;
+    }
+
+    .colour_palette_grid {
+        gap: 0.75rem;
+    }
+
+    .colour_swatch_block {
+        width: 60px;
+        height: 60px;
+    }
+
+    .ethos_keywords {
+        grid-template-columns: 1fr;
+    }
+
+    .button_group {
+        flex-direction: column;
+    }
+
+    .sg_section {
+        padding: 2.5rem 0;
+    }
+
+    .style_guide_page {
+        padding: 0 1rem;
+    }
+
+    .bg_blur {
+        width: 100vw;
+        height: 55vh;
+    }
+}
+
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
