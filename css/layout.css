@@ -19,6 +19,17 @@
 .mt_lg  { margin-top: var(--space_lg); }
 .mt_xl  { margin-top: var(--space_xl); }
 
+/* ── Display / position utilities ── */
+
+.display_block       { display: block; }
+.position_static     { position: static; }
+
+/* ── Font-weight utilities ── */
+
+.font_weight_light   { font-weight: 300; }
+.font_weight_medium  { font-weight: 500; }
+.font_weight_bold    { font-weight: 700; }
+
 /* ── Flex helpers ── */
 
 .flex_row          { display: flex; flex-direction: row; }
