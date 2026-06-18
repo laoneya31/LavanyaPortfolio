@@ -45,6 +45,8 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
+    margin-left: 3rem;
+    margin-right: 3rem;
 }
 
 img {
@@ -92,7 +94,7 @@ header, main, footer, section {
 .in_text_link {
     font-family: var(--font_ui);
     color: var(--color_heading);
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-color: var(--color_muted);
     text-underline-offset: 3px;
     transition: text-decoration-color var(--transition), color var(--transition);
@@ -100,8 +102,17 @@ header, main, footer, section {
 }
 
 .in_text_link:hover {
-    color: var(--color_body);
-    text-decoration-color: var(--color_heading);
+    color: #DEA9A9;
+    text-decoration: underline;
+    text-decoration-color: #DEA9A9;
+}
+
+.in_text_link:focus-visible {
+    outline: 2px solid var(--color_heading);
+    color: #DEA9A9;
+    text-decoration: underline;
+    text-decoration-color: #DEA9A9;
+    outline-offset: 3px;
 }
 
 
@@ -139,6 +150,11 @@ header, main, footer, section {
 
 .nav_link:hover::after {
     width: 100%;
+}
+
+.nav_link:focus-visible {
+    outline: 2px solid var(--color_heading);
+    outline-offset: 4px;
 }
 
 
@@ -183,6 +199,11 @@ header, main, footer, section {
     transform: translateX(3px);
 }
 
+.primary_button:focus-visible {
+    outline: 2px solid var(--color_heading);
+    outline-offset: 3px;
+}
+
 
 /* ============================================
    SECONDARY BUTTON (reset)
@@ -197,7 +218,7 @@ header, main, footer, section {
     font-weight: 500;
     color: var(--color_heading);
     background-color: transparent;
-    border: 1.5px solid var(--color_border);
+    border: 1.5px solid #8D6F6F;
     border-radius: var(--radius_btn);
     padding: 0.65rem 1.6rem;
     text-decoration: none;
@@ -210,6 +231,11 @@ header, main, footer, section {
     border-color: var(--color_heading);
     background-color: var(--color_hover_bg);
     transform: translateY(-1px);
+}
+
+.secondary_button:focus-visible {
+    outline: 2px solid var(--color_heading);
+    outline-offset: 3px;
 }
 
 
@@ -269,6 +295,24 @@ header, main, footer, section {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
+    padding: 0.4rem 0.6rem;
+    margin: 0 -0.6rem;
+    border-radius: var(--radius_input);
+    transition: background-color var(--transition);
+}
+
+.radio_group_title:hover,
+.radio_group_title:focus-within,
+.radio_group_title:active,
+.radio_group_title:has(input[type="radio"]:checked) {
+    background-color: #DEA9A9;
+}
+
+.radio_group_title:hover label,
+.radio_group_title:focus-within label,
+.radio_group_title:active label,
+.radio_group_title:has(input[type="radio"]:checked) label {
+    color: #FFFFFF;
 }
 
 .radio_group_title input[type="radio"] {
@@ -288,6 +332,25 @@ header, main, footer, section {
 
 .radio_group_title input[type="radio"]:checked {
     border-color: var(--color_heading);
+}
+
+.radio_group_title:hover input[type="radio"],
+.radio_group_title:focus-within input[type="radio"],
+.radio_group_title:active input[type="radio"],
+.radio_group_title:has(input[type="radio"]:checked) input[type="radio"] {
+    border-color: #FFFFFF;
+}
+
+.radio_group_title:hover input[type="radio"]:checked::after,
+.radio_group_title:focus-within input[type="radio"]:checked::after,
+.radio_group_title:active input[type="radio"]:checked::after,
+.radio_group_title:has(input[type="radio"]:checked) input[type="radio"]:checked::after {
+    background-color: #FFFFFF;
+}
+
+.radio_group_title input[type="radio"]:focus-visible {
+    outline: 2px solid var(--color_heading);
+    outline-offset: 2px;
 }
 
 .radio_group_title input[type="radio"]:checked::after {
@@ -347,6 +410,11 @@ header, main, footer, section {
         0 12px 40px rgba(141, 111, 111, 0.10),
         0 2px 8px rgba(141, 111, 111, 0.06),
         inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.project_card:focus-visible {
+    outline: 2px solid var(--color_heading);
+    outline-offset: 3px;
 }
 
 /* Diamond hover accent via pseudo-element */
@@ -414,9 +482,19 @@ header, main, footer, section {
     text-decoration: none;
 }
 
-.header_logo h1 {
+.header_logo .brand_mark {
     font-size: 2.25rem;
     line-height: 1;
+    transition: color var(--transition);
+}
+
+.header_logo:hover .brand_mark {
+    color: var(--color_body);
+}
+
+.header_logo:focus-visible {
+    outline: 2px solid var(--color_heading);
+    outline-offset: 4px;
 }
 
 .header_nav_bar {
@@ -444,7 +522,7 @@ header, main, footer, section {
 
 .project_detail_grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 3rem;
     align-items: start;
 }
@@ -509,13 +587,17 @@ header, main, footer, section {
     justify-content: space-between;
     gap: 1.5rem;
     margin-top: 5rem;
+    margin-left: -3rem;
+    margin-right: -3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
 .footer_logo {
     text-decoration: none;
 }
 
-.footer_logo h1 {
+.footer_logo .brand_mark {
     font-size: 2rem;
     line-height: 1;
 }
@@ -598,6 +680,10 @@ header, main, footer, section {
     background-color: var(--color_code_bg);
     border-radius: var(--radius_input);
     border-left: 2px solid var(--color_muted);
+}
+
+.code_block code {
+    overflow-wrap: anywhere;
 }
 
 /* Colour swatches */
@@ -710,3 +796,364 @@ header, main, footer, section {
 .colour_swatch_heading  { background: #8D6F6F; }
 .colour_swatch_body     { background: #CCA8A8; }
 .colour_swatch_muted    { background: #D9BFBF; }
+
+
+/* ============================================
+   SITE LAYOUT PRIMITIVES (shared page shell)
+   ============================================ */
+
+/* Visually-hidden-until-focused skip link */
+.skip_link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 999;
+    padding: 0.6rem 1rem;
+    background-color: var(--color_heading);
+    color: var(--color_bg);
+    font-family: var(--font_ui);
+    font-size: var(--size_small);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: var(--radius_input);
+}
+
+.skip_link:focus {
+    left: 0.75rem;
+    top: 0.75rem;
+}
+
+/* Main content wrapper for all non-style-guide pages */
+.page_main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2rem 2rem 0;
+}
+
+.page_section {
+    padding: 2.5rem 0;
+}
+
+.page_intro {
+    max-width: 60ch;
+    margin-bottom: 2rem;
+}
+
+
+/* ============================================
+   MOBILE NAV DISCLOSURE (<details>/<summary>)
+   Desktop: behaves as a plain inline nav; the
+   summary toggle only appears at <=600px.
+   ============================================ */
+
+.nav_disclosure > summary.nav_toggle {
+    display: none;
+    list-style: none;
+    cursor: pointer;
+}
+
+.nav_disclosure > summary.nav_toggle::-webkit-details-marker {
+    display: none;
+}
+
+
+/* ============================================
+   HERO WORDMARK (home)
+   ============================================ */
+
+.hero {
+    text-align: center;
+    padding: 3.5rem 0 1.5rem;
+}
+
+.hero_wordmark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.hero_wordmark_sub {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1rem, 3vw, 1.75rem);
+    font-weight: 400;
+    text-transform: lowercase;
+    letter-spacing: 0.32em;
+    color: var(--color_body);
+    margin-top: -0.45em;
+    text-indent: 0.32em;
+}
+
+
+/* ============================================
+   FEATURED PROJECT CAROUSEL (home)
+   Native scroll-snap is the no-JS baseline.
+   ============================================ */
+
+.project_carousel {
+    position: relative;
+    margin: 1.5rem 0 1rem;
+}
+
+.carousel_track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 0.5rem 0.25rem 1.5rem;
+    scrollbar-width: thin;
+}
+
+.carousel_track .project_card {
+    scroll-snap-align: start;
+    flex: 0 0 calc((100% - 2 * 1.5rem) / 3);
+}
+
+.carousel_track:focus-visible {
+    outline: 2px solid var(--color_heading);
+    outline-offset: 4px;
+}
+
+.carousel_arrow_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 3;
+    transition: opacity var(--transition);
+}
+
+.carousel_arrow_prev {
+    left: -0.75rem;
+}
+
+.carousel_arrow_next {
+    right: -0.75rem;
+}
+
+.carousel_arrow_btn img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.carousel_arrow_btn:focus-visible {
+    outline: 2px solid var(--color_heading);
+    outline-offset: 3px;
+}
+
+.carousel_arrow_btn[disabled] {
+    opacity: 0.25;
+    cursor: default;
+}
+
+
+/* ============================================
+   PROJECTS LISTING — 2-column modifier + filter
+   ============================================ */
+
+.projects_grid_2col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.project_card.is_hidden {
+    display: none;
+}
+
+/* Discipline filter row (radio_group laid out horizontally) */
+.filter_controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    padding: 0.5rem 0;
+    margin-bottom: 2rem;
+}
+
+.filter_controls .radio_group {
+    padding: 0;
+}
+
+
+/* ============================================
+   PROJECT DETAIL — back link, banner, media
+   ============================================ */
+
+.back_link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font_ui);
+    font-size: var(--size_small);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color_heading);
+    text-decoration: none;
+    transition: gap var(--transition);
+}
+
+.back_link img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.back_link:hover {
+    gap: 0.8rem;
+}
+
+.back_link:focus-visible {
+    outline: 2px solid var(--color_heading);
+    outline-offset: 3px;
+}
+
+.project_banner {
+    margin: 1.5rem 0 2.5rem;
+    border-radius: var(--radius_card);
+    overflow: hidden;
+}
+
+.project_banner img {
+    width: 100%;
+    height: auto;
+}
+
+.project_prose {
+    max-width: 70ch;
+    margin-bottom: 2.5rem;
+}
+
+.project_prose p + p {
+    margin-top: 1rem;
+}
+
+/* Responsive 16:9 video embed */
+.video_embed {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius_card);
+    overflow: hidden;
+    border: 1px solid var(--color_border);
+    background-color: var(--color_surface);
+}
+
+.video_embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* PDF download block (uses .primary_button for the link) */
+.download_block {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+
+/* ============================================
+   CONTACT — email row, copy button, form status
+   ============================================ */
+
+.email_row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.field_error {
+    font-family: var(--font_ui);
+    font-size: var(--size_small);
+    font-weight: 600;
+    color: var(--color_heading);
+    margin-top: 0.2rem;
+}
+
+.form_group input[aria-invalid="true"],
+.form_group textarea[aria-invalid="true"] {
+    border-color: var(--color_heading);
+}
+
+.form_status {
+    font-family: var(--font_ui);
+    font-size: var(--size_small);
+    font-weight: 500;
+    color: var(--color_heading);
+}
+
+.form_status:empty {
+    display: none;
+}
+
+
+/* ============================================
+   EMPLOYMENT-INTEREST CARDS (about)
+   ============================================ */
+
+.info_card_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+
+/* ============================================
+   SCROLL-REVEAL HOOKS (about ethos grid)
+   Items are visible by default (no-JS / reduced
+   motion). Animation only applies once JS adds
+   .js_reveal and the user allows motion.
+   ============================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+    .js_reveal .reveal_item {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .js_reveal .reveal_item.is_revealed {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* ============================================
+   READING PROGRESS BAR + BACK TO TOP
+   ============================================ */
+
+.reading_progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background-color: var(--color_heading);
+    z-index: 200;
+    transition: width 0.1s linear;
+}
+
+.back_to_top {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 150;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+}
+
+.back_to_top.is_visible {
+    opacity: 1;
+    visibility: visible;
+}

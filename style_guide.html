@@ -12,33 +12,38 @@
 
 <body>
 
+    <!-- Skip link — first focusable element, jumps to <main> -->
+    <a class="skip_link" href="#main_content">Skip to main content</a>
+
     <!-- Fixed blush blur — stays centred behind all content on scroll -->
     <div class="bg_blur"></div>
 
     <!-- HEADER / NAV — links to section anchors on this page -->
     <header>
-        <nav class="header_bar">
+        <nav class="header_bar" aria-label="Primary">
             <a class="header_logo" href="index.html">
-                <h1>Lavanya's</h1>
+                <span class="brand_mark">Lavanya's</span>
             </a>
 
-            <div class="header_nav_bar">
-                <a class="nav_link" href="#interactive_elements">Interactive Elements</a>
-                <a class="nav_link" href="#text_styling">Text Styling</a>
-                <a class="nav_link" href="#combined_elements">Combined Elements</a>
-                <a class="nav_link" href="#my_ethos">My Ethos</a>
-                <a class="nav_link" href="#templates">Templates</a>
-                <a class="nav_link" href="#citations">Citations</a>
-            </div>
+            <details class="nav_disclosure" open>
+                <summary class="nav_toggle">Menu</summary>
+                <div class="header_nav_bar">
+                    <a class="nav_link" href="#interactive_elements">Interactive Elements</a>
+                    <a class="nav_link" href="#text_styling">Text Styling</a>
+                    <a class="nav_link" href="#combined_elements">Combined Elements</a>
+                    <a class="nav_link" href="#my_ethos">My Ethos</a>
+                    <a class="nav_link" href="#templates">Templates</a>
+                    <a class="nav_link" href="#citations">Citations</a>
+                </div>
+            </details>
         </nav>
     </header>
 
-    <main class="style_guide_page">
+    <main class="style_guide_page" id="main_content">
 
         <!-- Page title -->
         <div class="sg_section">
             <h1>Style Guide</h1>
-            <p class="mt_sm">A visual reference for the design language of this portfolio — intentional, soft-spoken, and cohesive.</p>
         </div>
 
 
@@ -271,55 +276,57 @@
                 <h2>Text Styling</h2>
 
 
-                <!-- Fonts -->
-                <div class="element">
-                    <h3>Fonts</h3>
-                </div>
-
+                <!-- Fonts + Headings side by side -->
                 <div class="element_detail">
-                    <h4>Code:</h4>
-                    <div class="code_block">
-                        <code>@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Manrope:wght@300;400;500;600;700&display=swap');</code>
+                    <div class="project_detail_grid">
+
+                        <!-- Fonts column -->
+                        <div>
+                            <h3>Fonts</h3>
+
+                            <h4>Code:</h4>
+                            <div class="code_block">
+                                <code>@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Manrope:wght@300;400;500;600;700&display=swap');</code>
+                            </div>
+
+                            <h4>Rendered element:</h4>
+                            <h1>Corinthia — Display</h1>
+                            <h2>Cinzel- Variable</h2>
+                            <h3>Manrope Medium 500 — labels, h4.</h3>
+                            <h4>Manrope Bold 700 — h2, h3, section headings.</h4>
+                            <small>Manrope Light 300 — input placeholders.</small>
+
+                            <h4>CSS selector:</h4>
+                            <small class="css_selector">--font_display &nbsp;·&nbsp; --font_ui</small>
+                        </div>
+
+                        <!-- Headings & Paragraph column -->
+                        <div>
+                            <h3>Headings &amp; Paragraph</h3>
+
+                            <h4>Code:</h4>
+                            <div class="code_block">
+                                <code>&lt;h1&gt;Lavanya's&lt;/h1&gt;</code>
+                                <code>&lt;h2&gt;Heading 2&lt;/h2&gt;</code>
+                                <code>&lt;h3&gt;Heading 3&lt;/h3&gt;</code>
+                                <code>&lt;h4&gt;Heading 4&lt;/h4&gt;</code>
+                                <code>&lt;p&gt;Paragraph text&lt;/p&gt;</code>
+                                <code>&lt;small&gt;Small / caption text&lt;/small&gt;</code>
+                            </div>
+
+                            <h4>Rendered element:</h4>
+                            <h1>Lavanya's</h1>
+                            <h2>Heading 2</h2>
+                            <h3>Heading 3</h3>
+                            <h4>Heading 4</h4>
+                            <p>Paragraph — I believe good design is felt before it's understood. Clean, considered, and always purposeful.</p>
+                            <small>Small — captions, labels, meta information.</small>
+
+                            <h4>CSS selector:</h4>
+                            <small class="css_selector">h1 &nbsp;·&nbsp; h2 &nbsp;·&nbsp; h3 &nbsp;·&nbsp; h4 &nbsp;·&nbsp; p &nbsp;·&nbsp; small</small>
+                        </div>
+
                     </div>
-
-                    <h4>Rendered element:</h4>
-                    <h1>Corinthia — Display</h1>
-                    <p class="mt_sm">Manrope Regular 400 — body text, descriptions, captions.</p>
-                    <p class="mt_xs font_weight_medium">Manrope Medium 500 — labels, h4.</p>
-                    <p class="mt_xs font_weight_bold">Manrope Bold 700 — h2, h3, section headings.</p>
-                    <p class="mt_xs font_weight_light">Manrope Light 300 — input placeholders.</p>
-
-                    <h4>CSS selector:</h4>
-                    <small class="css_selector">--font_display &nbsp;·&nbsp; --font_ui</small>
-                </div>
-
-
-                <!-- Headings and paragraphs -->
-                <div class="element">
-                    <h3>Headings &amp; Paragraph</h3>
-                </div>
-
-                <div class="element_detail">
-                    <h4>Code:</h4>
-                    <div class="code_block">
-                        <code>&lt;h1&gt;Lavanya's&lt;/h1&gt;</code>
-                        <code>&lt;h2&gt;Heading 2&lt;/h2&gt;</code>
-                        <code>&lt;h3&gt;Heading 3&lt;/h3&gt;</code>
-                        <code>&lt;h4&gt;Heading 4&lt;/h4&gt;</code>
-                        <code>&lt;p&gt;Paragraph text&lt;/p&gt;</code>
-                        <code>&lt;small&gt;Small / caption text&lt;/small&gt;</code>
-                    </div>
-
-                    <h4>Rendered element:</h4>
-                    <h1>Lavanya's</h1>
-                    <h2 class="mt_sm">Heading 2</h2>
-                    <h3 class="mt_sm">Heading 3</h3>
-                    <h4 class="mt_sm">Heading 4</h4>
-                    <p class="mt_sm">Paragraph — I believe good design is felt before it's understood. Clean, considered, and always purposeful.</p>
-                    <small class="mt_sm display_block">Small — captions, labels, meta information.</small>
-
-                    <h4>CSS selector:</h4>
-                    <small class="css_selector">h1 &nbsp;·&nbsp; h2 &nbsp;·&nbsp; h3 &nbsp;·&nbsp; h4 &nbsp;·&nbsp; p &nbsp;·&nbsp; small</small>
                 </div>
 
 
@@ -673,7 +680,7 @@
                     <div class="mt_md">
                         <img src="img/background_blur_circle.png" alt="Background blur atmosphere" class="demo_blur_image">
                     </div>
-                    <small class="mt_sm display_block">Background blur circle — position: fixed, opacity 0.55, sits behind all content on scroll.</small>
+                    <small class="display_block">Background blur circle — position: fixed, opacity 0.55, sits behind all content on scroll.</small>
                 </div>
 
             </div>
@@ -717,18 +724,20 @@
     <footer>
         <div class="footer_bar">
             <a class="footer_logo" href="index.html">
-                <h1>Lavanya's</h1>
+                <span class="brand_mark">Lavanya's</span>
             </a>
 
-            <div class="footer_nav">
+            <nav class="footer_nav" aria-label="Footer">
+                <a class="nav_link" href="projects.html">Projects</a>
                 <a class="nav_link" href="contact.html">Contact</a>
-                <a class="nav_link" href="style_guide.html">Style Guide</a>
-                <a class="nav_link" href="citations.html">Citations</a>
-            </div>
+                <a class="nav_link" href="style_guide.html" aria-current="page">Style Guide</a>
+            </nav>
 
             <p class="footer_tagline">Design felt before it's understood.</p>
         </div>
     </footer>
+
+    <script src="js/main.js" defer></script>
 
 </body>
 </html>

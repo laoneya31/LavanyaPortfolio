@@ -3,7 +3,7 @@
    Typefaces: Corinthia (display) · Manrope (ui)
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Corinthia:wght@400;700&family=Manrope:wght@300;400;500;600;700&display=swap');
 
 /* ── Type Scale Variables ── */
 :root {
@@ -31,12 +31,25 @@ h1 {
 }
 
 h2 {
-    font-family: var(--font_ui);
+    font-family: 'Cinzel', serif;
     font-size: var(--size_h2);
     font-weight: 700;
     color: var(--color_heading);
     line-height: 1.2;
     letter-spacing: -0.01em;
+}
+
+/* Brand wordmark — carries the old <h1> typographic identity so the
+   header/footer logo looks identical, while freeing <h1> for one real
+   page title per page (header/footer override the size below). */
+.brand_mark {
+    display: inline-block;
+    font-family: var(--font_display);
+    font-size: var(--size_h1);
+    font-weight: 400;
+    color: var(--color_heading);
+    line-height: 1.05;
+    letter-spacing: 0.01em;
 }
 
 h3 {
@@ -59,7 +72,7 @@ p {
     font-family: var(--font_ui);
     font-size: var(--size_p);
     font-weight: 400;
-    color: var(--color_body);
+    color: #B39696;
     line-height: 1.7;
 }
 
@@ -67,7 +80,7 @@ small {
     font-family: var(--font_ui);
     font-size: var(--size_small);
     font-weight: 400;
-    color: var(--color_muted);
+    color: #B39696;
     line-height: 1.5;
 }
 
