@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Lavanya's Portfolio</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Skip link — first focusable element, jumps to <main> -->
+    <a class="skip_link" href="#main_content">Skip to main content</a>
+
+    <!-- Fixed blush blur — stays centred behind all content on scroll -->
+    <div class="bg_blur"></div>
+
+    <!-- HEADER / NAV -->
+    <header>
+        <nav class="header_bar" aria-label="Primary">
+            <a class="header_logo" href="index.html">
+                <span class="brand_mark">Lavanya's</span>
+            </a>
+
+            <details class="nav_disclosure" open>
+                <summary class="nav_toggle">Menu</summary>
+                <div class="header_nav_bar">
+                    <a class="nav_link" href="index.html">Home</a>
+                    <a class="nav_link" href="about.html">About Me</a>
+                    <a class="nav_link" href="projects.html" aria-current="page">Projects</a>
+                    <a class="nav_link" href="contact.html">Contact</a>
+                </div>
+            </details>
+        </nav>
+    </header>
+
+    <main class="page_main" id="main_content">
+
+        <h1>Projects.</h1>
+        <p class="page_intro">A selection of UI/UX, game design, and illustration work. Use the
+            filters to narrow the list by discipline.</p>
+
+        <section class="page_section" aria-labelledby="work_heading">
+            <h2 id="work_heading">Selected Work</h2>
+
+            <!-- Discipline filter — native radio group, enhanced by JS -->
+            <div class="filter_controls" role="radiogroup" aria-label="Filter projects by discipline">
+                <div class="radio_group">
+                    <div class="radio_group_title">
+                        <input type="radio" name="discipline" id="filter_all" value="all" checked>
+                        <label for="filter_all">All</label>
+                    </div>
+                </div>
+                <div class="radio_group">
+                    <div class="radio_group_title">
+                        <input type="radio" name="discipline" id="filter_ui_ux" value="ui_ux">
+                        <label for="filter_ui_ux">UI/UX Design</label>
+                    </div>
+                </div>
+                <div class="radio_group">
+                    <div class="radio_group_title">
+                        <input type="radio" name="discipline" id="filter_game" value="game">
+                        <label for="filter_game">Game Design</label>
+                    </div>
+                </div>
+                <div class="radio_group">
+                    <div class="radio_group_title">
+                        <input type="radio" name="discipline" id="filter_illustration" value="illustration">
+                        <label for="filter_illustration">Illustration</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project_list_grid projects_grid_2col">
+
+                <a class="project_card" href="project-dinely.html" data-discipline="ui_ux">
+                    <div class="project_card_img">
+                        <img src="img/background_blur_circle.png" alt="Dinely" loading="lazy">
+                    </div>
+                    <div class="project_card_text">
+                        <h3>Dinely</h3>
+                        <p>Dinely is a mobile app that combines restaurant discovery, personalized recommendations, and table reservations into one seamless experience.</p>
+                    </div>
+                </a>
+
+                <a class="project_card" href="project-wandmaker.html" data-discipline="game">
+                    <div class="project_card_img">
+                        <img src="img/background_blur_circle.png" alt="Wandmaker's Atelier" loading="lazy">
+                    </div>
+                    <div class="project_card_text">
+                        <h3>Wandmaker's Atelier</h3>
+                        <p>[PLACEHOLDER — one-line description]</p>
+                    </div>
+                </a>
+
+                <a class="project_card" href="project-three.html" data-discipline="illustration">
+                    <div class="project_card_img">
+                        <img src="img/background_blur_circle.png" alt="[Project 3 Name]" loading="lazy">
+                    </div>
+                    <div class="project_card_text">
+                        <h3>[Project 3 Name]</h3>
+                        <p>[PLACEHOLDER — one-line description]</p>
+                    </div>
+                </a>
+
+                <a class="project_card" href="project-four.html" data-discipline="ui_ux">
+                    <div class="project_card_img">
+                        <img src="img/background_blur_circle.png" alt="[Project 4 Name]" loading="lazy">
+                    </div>
+                    <div class="project_card_text">
+                        <h3>[Project 4 Name]</h3>
+                        <p>[PLACEHOLDER — one-line description]</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer_bar">
+            <a class="footer_logo" href="index.html">
+                <span class="brand_mark">Lavanya's</span>
+            </a>
+
+            <nav class="footer_nav" aria-label="Footer">
+                <a class="nav_link" href="projects.html" aria-current="page">Projects</a>
+                <a class="nav_link" href="contact.html">Contact</a>
+                <a class="nav_link" href="style_guide.html">Style Guide</a>
+            </nav>
+
+            <p class="footer_tagline">Design felt before it's understood.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>

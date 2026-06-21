@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me — Lavanya's Portfolio</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Skip link — first focusable element, jumps to <main> -->
+    <a class="skip_link" href="#main_content">Skip to main content</a>
+
+    <!-- Fixed blush blur — stays centred behind all content on scroll -->
+    <div class="bg_blur"></div>
+
+    <!-- HEADER / NAV -->
+    <header>
+        <nav class="header_bar" aria-label="Primary">
+            <a class="header_logo" href="index.html">
+                <span class="brand_mark">Lavanya's</span>
+            </a>
+
+            <details class="nav_disclosure" open>
+                <summary class="nav_toggle">Menu</summary>
+                <div class="header_nav_bar">
+                    <a class="nav_link" href="index.html">Home</a>
+                    <a class="nav_link" href="about.html" aria-current="page">About Me</a>
+                    <a class="nav_link" href="projects.html">Projects</a>
+                    <a class="nav_link" href="contact.html">Contact</a>
+                </div>
+            </details>
+        </nav>
+    </header>
+
+    <main class="page_main" id="main_content">
+
+        <div class="about_grid">
+
+            <!-- LEFT — photo carousel (native scroll-snap baseline) -->
+            <section class="photo_carousel" aria-label="Photos: portrait and hobbies">
+                <button class="carousel_arrow_btn carousel_arrow_prev" type="button" aria-label="Previous photo">
+                    <img src="img/left_arrow.png" alt="">
+                </button>
+                <div class="carousel_track photo_carousel_track" tabindex="0">
+                    <img class="photo_carousel_slide" src="img/background_blur_circle.png"
+                        alt="[PLACEHOLDER: portrait photo of Lavanya]" loading="eager">
+                    <img class="photo_carousel_slide" src="img/background_blur_circle.png"
+                        alt="[PLACEHOLDER: hobby photo 1 — describe what it shows]" loading="lazy">
+                    <img class="photo_carousel_slide" src="img/background_blur_circle.png"
+                        alt="[PLACEHOLDER: hobby photo 2 — describe what it shows]" loading="lazy">
+                    <!-- add more .photo_carousel_slide images as needed once real photos exist -->
+                </div>
+                <button class="carousel_arrow_btn carousel_arrow_next" type="button" aria-label="Next photo">
+                    <img src="img/right_arrow.png" alt="">
+                </button>
+                <span class="visually_hidden carousel_status" aria-live="polite" data-label="Photo"></span>
+            </section>
+
+            <!-- RIGHT — wordmark heading + bio -->
+            <div class="about_intro">
+                <h1>
+                    <span class="wordmark_label">about</span>
+                    <span class="wordmark_main">Lavanya</span>
+                </h1>
+                <h2>Hi!</h2>
+                <p>I'm a 3rd year student studying Interactive Arts and Technology at Simon Fraser
+                    University, and enjoy UI/UX Design and Game Design.</p>
+                <p>I love to integrate and familiarise myself with different techniques and
+                    applications of design, and also open myself up to new opportunities to further
+                    my expertise in IAT.</p>
+                <p>As someone who has always loved all sorts of art and experimented a lot, I hope to
+                    continue to explore different ways to express myself and my interests!</p>
+                <p>P.S. I also immerse myself in various hobbies and creative pass times, some of
+                    which I have highlighted on the side for you to scroll through :D</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer_bar">
+            <a class="footer_logo" href="index.html">
+                <span class="brand_mark">Lavanya's</span>
+            </a>
+
+            <nav class="footer_nav" aria-label="Footer">
+                <a class="nav_link" href="projects.html">Projects</a>
+                <a class="nav_link" href="contact.html">Contact</a>
+                <a class="nav_link" href="style_guide.html">Style Guide</a>
+            </nav>
+
+            <p class="footer_tagline">Design felt before it's understood.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>

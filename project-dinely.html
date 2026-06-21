@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinely — Lavanya's Portfolio</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Skip link — first focusable element, jumps to <main> -->
+    <a class="skip_link" href="#main_content">Skip to main content</a>
+
+    <!-- Reading progress bar (enhanced by JS; 0 width without it) -->
+    <div class="reading_progress" aria-hidden="true"></div>
+
+    <!-- Fixed blush blur — stays centred behind all content on scroll -->
+    <div class="bg_blur"></div>
+
+    <!-- HEADER / NAV -->
+    <header>
+        <nav class="header_bar" aria-label="Primary">
+            <a class="header_logo" href="index.html">
+                <span class="brand_mark">Lavanya's</span>
+            </a>
+
+            <details class="nav_disclosure" open>
+                <summary class="nav_toggle">Menu</summary>
+                <div class="header_nav_bar">
+                    <a class="nav_link" href="index.html">Home</a>
+                    <a class="nav_link" href="about.html">About Me</a>
+                    <a class="nav_link" href="projects.html" aria-current="page">Projects</a>
+                    <a class="nav_link" href="contact.html">Contact</a>
+                </div>
+            </details>
+        </nav>
+    </header>
+
+    <main class="page_main" id="main_content">
+
+        <a class="back_link" href="projects.html">
+            <img src="img/left_arrow.png" alt="">
+            Back to Projects
+        </a>
+
+        <h1>Dinely</h1>
+
+        <div class="project_banner">
+            <img src="img/background_blur_circle.png" alt="Dinely cover image placeholder"
+                loading="eager" width="1200" height="675">
+        </div>
+
+        <section class="page_section" aria-labelledby="process_heading">
+            <h2 id="process_heading">Process</h2>
+            <div class="project_prose">
+                <p>Dinely is a mobile app that helps users discover nearby restaurants, browse menus, and reserve tables all in one place. The app personalizes recommendations based on dietary restrictions and cuisine preferences, combining real-time restaurant data with a seamless reservation experience. It is built with JavaScript and React, and tested on Expo Go.</p>
+                <p>I designed and implemented the end-to-end authentication flow using Firebase Authentication. This included sign-in, sign-up, password reset, and a four-step onboarding process that collected the user's name, dietary restrictions, cuisine preferences, and login credentials. Furthermore, I set up and managed the cloud database layer responsible for persisting user profiles beyond a single device session. Dietary and cuisine preferences, profile edits, and account details are all synced to Firestore in real time, giving users a consistent experience across logins.</p>
+                <p>Additionally, lightweight on-device data persistence using Async Storage for UI preferences like color theme, appearance mode (light/dark/system), and notification settings was also added. Finally, I integrated native camera access to allow users to take and upload a profile photo directly from their device. Handled permission requests, image capture, and local storage of the selected image so it persists in the user's profile view.</p>
+                <p>Working collaboratively on GitHub for the first time introduced friction early on due to frequent merge conflicts caused by team members committing directly to main. We resolved this by adopting a branch-based workflow, which dramatically reduced conflicts and improved our parallel development process. We also struggled with integrating local and cloud storage, as some properties, like reservations, that were stored locally, would show up across accounts on the same device. We linked all local storage to the cloud using the unique ID, which removed this issue.</p>
+                <p>The final app delivered a fully functional, personalized dining discovery experience with real authentication, cloud-synced profiles, local data persistence, and native camera support, all with a clean, polished, and easy-to-navigate design.</p>
+            </div>
+        </section>
+
+        <section class="page_section" aria-labelledby="media_heading">
+            <h2 id="media_heading">Walkthrough</h2>
+            <!-- Swap VIDEO_ID_HERE for the real YouTube video id -->
+            <div class="video_embed">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Dinely"
+                    loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Back to top (enhanced by JS; hidden until scrolled) -->
+    <button type="button" class="secondary_button back_to_top" aria-label="Back to top">↑ Top</button>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer_bar">
+            <a class="footer_logo" href="index.html">
+                <span class="brand_mark">Lavanya's</span>
+            </a>
+
+            <nav class="footer_nav" aria-label="Footer">
+                <a class="nav_link" href="projects.html">Projects</a>
+                <a class="nav_link" href="contact.html">Contact</a>
+                <a class="nav_link" href="style_guide.html">Style Guide</a>
+            </nav>
+
+            <p class="footer_tagline">Design felt before it's understood.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>

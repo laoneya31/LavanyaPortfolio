@@ -10,7 +10,7 @@
     --font_display:     'Corinthia', cursive;
     --font_ui:          'Manrope', sans-serif;
 
-    --size_h1:          clamp(3rem, 8vw, 6rem);
+    --size_h1:          clamp(3.75rem, 10vw, 7.5rem);
     --size_h2:          clamp(1.6rem, 3vw, 2.25rem);
     --size_h3:          clamp(1.1rem, 2vw, 1.375rem);
     --size_h4:          1rem;

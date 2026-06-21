@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavanya's Portfolio</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Skip link — first focusable element, jumps to <main> -->
+    <a class="skip_link" href="#main_content">Skip to main content</a>
+
+    <!-- Fixed blush blur — stays centred behind all content on scroll -->
+    <div class="bg_blur"></div>
+
+    <!-- HEADER / NAV -->
+    <header>
+        <nav class="header_bar" aria-label="Primary">
+            <a class="header_logo" href="index.html">
+                <span class="brand_mark">Lavanya's</span>
+            </a>
+
+            <details class="nav_disclosure" open>
+                <summary class="nav_toggle">Menu</summary>
+                <div class="header_nav_bar">
+                    <a class="nav_link" href="index.html" aria-current="page">Home</a>
+                    <a class="nav_link" href="about.html">About Me</a>
+                    <a class="nav_link" href="projects.html">Projects</a>
+                    <a class="nav_link" href="contact.html">Contact</a>
+                </div>
+            </details>
+        </nav>
+    </header>
+
+    <main class="page_main" id="main_content">
+
+        <!-- Hero: the page's one real <h1> -->
+        <div class="hero">
+            <h1>
+                <span class="wordmark_main">Lavanya's</span>
+                <span class="wordmark_label">portfolio</span>
+            </h1>
+        </div>
+
+        <!-- Featured project carousel — native scroll-snap is the no-JS baseline -->
+        <section aria-labelledby="featured_heading" class="project_carousel">
+            <h2 id="featured_heading" class="visually_hidden">Featured projects</h2>
+
+            <button class="carousel_arrow_btn carousel_arrow_prev" type="button" aria-label="Previous project">
+                <img src="img/left_arrow.png" alt="">
+            </button>
+
+            <div class="carousel_track" tabindex="0">
+
+                <a class="project_card" href="project-dinely.html">
+                    <div class="project_card_img">
+                        <img src="img/background_blur_circle.png" alt="Dinely" loading="lazy">
+                    </div>
+                    <div class="project_card_text">
+                        <h3>Dinely</h3>
+                        <p>[PLACEHOLDER — one-line description]</p>
+                    </div>
+                </a>
+
+                <a class="project_card" href="project-wandmaker.html">
+                    <div class="project_card_img">
+                        <img src="img/background_blur_circle.png" alt="Wandmaker's Atelier" loading="lazy">
+                    </div>
+                    <div class="project_card_text">
+                        <h3>Wandmaker's Atelier</h3>
+                        <p>[PLACEHOLDER — one-line description]</p>
+                    </div>
+                </a>
+
+                <a class="project_card" href="project-three.html">
+                    <div class="project_card_img">
+                        <img src="img/background_blur_circle.png" alt="[Project 3 Name]" loading="lazy">
+                    </div>
+                    <div class="project_card_text">
+                        <h3>[Project 3 Name]</h3>
+                        <p>[PLACEHOLDER — one-line description]</p>
+                    </div>
+                </a>
+
+                <a class="project_card" href="project-four.html">
+                    <div class="project_card_img">
+                        <img src="img/background_blur_circle.png" alt="[Project 4 Name]" loading="lazy">
+                    </div>
+                    <div class="project_card_text">
+                        <h3>[Project 4 Name]</h3>
+                        <p>[PLACEHOLDER — one-line description]</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <button class="carousel_arrow_btn carousel_arrow_next" type="button" aria-label="Next project">
+                <img src="img/right_arrow.png" alt="">
+            </button>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer_bar">
+            <a class="footer_logo" href="index.html">
+                <span class="brand_mark">Lavanya's</span>
+            </a>
+
+            <nav class="footer_nav" aria-label="Footer">
+                <a class="nav_link" href="projects.html">Projects</a>
+                <a class="nav_link" href="contact.html">Contact</a>
+                <a class="nav_link" href="style_guide.html">Style Guide</a>
+            </nav>
+
+            <p class="footer_tagline">Design felt before it's understood.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>

@@ -75,6 +75,10 @@
         grid-template-columns: 1fr;
     }
 
+    .about_grid {
+        grid-template-columns: 1fr;
+    }
+
     .ethos_keywords {
         grid-template-columns: repeat(2, 1fr);
     }

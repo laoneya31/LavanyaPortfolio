@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Lavanya's Portfolio</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Skip link — first focusable element, jumps to <main> -->
+    <a class="skip_link" href="#main_content">Skip to main content</a>
+
+    <!-- Fixed blush blur — stays centred behind all content on scroll -->
+    <div class="bg_blur"></div>
+
+    <!-- HEADER / NAV -->
+    <header>
+        <nav class="header_bar" aria-label="Primary">
+            <a class="header_logo" href="index.html">
+                <span class="brand_mark">Lavanya's</span>
+            </a>
+
+            <details class="nav_disclosure" open>
+                <summary class="nav_toggle">Menu</summary>
+                <div class="header_nav_bar">
+                    <a class="nav_link" href="index.html">Home</a>
+                    <a class="nav_link" href="about.html">About Me</a>
+                    <a class="nav_link" href="projects.html">Projects</a>
+                    <a class="nav_link" href="contact.html" aria-current="page">Contact</a>
+                </div>
+            </details>
+        </nav>
+    </header>
+
+    <main class="page_main" id="main_content">
+
+        <h1>Contact.</h1>
+
+        <section class="page_section" aria-labelledby="contact_heading">
+            <h2 id="contact_heading">Get in touch</h2>
+
+            <div class="contact_grid">
+
+                <!--
+                    Static hosting has no backend, so this defaults to a mailto: fallback.
+                    When deploying somewhere with form handling (e.g. Formspree or Netlify Forms),
+                    swap the action below for your real endpoint, e.g.:
+                        action="https://formspree.io/f/your-id" method="post"
+                -->
+                <form class="contact_form" action="mailto:lavanya@sfu.ca" method="post"
+                    enctype="text/plain">
+
+                    <div class="form_group">
+                        <label for="c_name">Full Name</label>
+                        <input id="c_name" name="name" type="text" placeholder="Your name"
+                            required aria-describedby="c_name_error">
+                        <span class="field_error" id="c_name_error"></span>
+                    </div>
+
+                    <div class="form_group">
+                        <label for="c_email">Email Address</label>
+                        <input id="c_email" name="email" type="email" placeholder="your@email.com"
+                            required aria-describedby="c_email_error">
+                        <span class="field_error" id="c_email_error"></span>
+                    </div>
+
+                    <div class="form_group">
+                        <label for="c_message">Message</label>
+                        <textarea id="c_message" name="message" rows="5"
+                            placeholder="What's on your mind?" required
+                            aria-describedby="c_message_error"></textarea>
+                        <span class="field_error" id="c_message_error"></span>
+                    </div>
+
+                    <div class="button_group">
+                        <button class="primary_button" type="submit">
+                            Send Message
+                            <img class="btn_arrow" src="img/right_arrow.png" alt="">
+                        </button>
+                        <button class="secondary_button" type="reset">Reset</button>
+                    </div>
+
+                    <p class="form_status" id="form_status" role="status" aria-live="polite"></p>
+                </form>
+
+                <div class="contact_info">
+                    <h3>Let's connect</h3>
+                    <p>Whether it's a project, a question, or just a conversation about design — I'd
+                        love to hear from you.</p>
+                    <div class="email_row">
+                        <a class="in_text_link" href="mailto:lavanya@sfu.ca">lavanya@sfu.ca</a>
+                        <button class="secondary_button copy_email_btn" type="button"
+                            data-copy="lavanya@sfu.ca" aria-label="Copy email address">Copy</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer_bar">
+            <a class="footer_logo" href="index.html">
+                <span class="brand_mark">Lavanya's</span>
+            </a>
+
+            <nav class="footer_nav" aria-label="Footer">
+                <a class="nav_link" href="projects.html">Projects</a>
+                <a class="nav_link" href="contact.html" aria-current="page">Contact</a>
+                <a class="nav_link" href="style_guide.html">Style Guide</a>
+            </nav>
+
+            <p class="footer_tagline">Design felt before it's understood.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>
