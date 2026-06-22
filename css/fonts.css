@@ -25,7 +25,7 @@ h1 {
     font-family: var(--font_display);
     font-size: var(--size_h1);
     font-weight: 400;
-    color: var(--color_heading);
+    color: #4B3535;
     line-height: 1.05;
     letter-spacing: 0.01em;
 }
@@ -72,7 +72,7 @@ p {
     font-family: var(--font_ui);
     font-size: var(--size_p);
     font-weight: 400;
-    color: #B39696;
+    color: var(--color_body);
     line-height: 1.7;
 }
 
@@ -80,7 +80,7 @@ small {
     font-family: var(--font_ui);
     font-size: var(--size_small);
     font-weight: 400;
-    color: #B39696;
+    color: var(--color_body);
     line-height: 1.5;
 }
 
