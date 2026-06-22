@@ -71,6 +71,10 @@
         position: static;
     }
 
+    .process_grid {
+        grid-template-columns: 1fr;
+    }
+
     .contact_grid {
         grid-template-columns: 1fr;
     }
@@ -84,13 +88,8 @@
     }
 
     .footer_bar {
-        flex-direction: column;
         padding: 2rem 1.5rem;
         gap: 1.25rem;
-    }
-
-    .footer_tagline {
-        text-align: left;
     }
 
     .style_guide_page {
@@ -202,10 +201,21 @@
         grid-template-columns: 1fr;
     }
 
-    /* Carousel: one card at a time, peeking the next; touch swipe
-       replaces the arrow buttons here. */
+    /* Home carousel: stack project cards in a normal vertical
+       scrolling column instead of horizontal swipe. Scoped to
+       .project_carousel so the About page's .photo_carousel (which
+       shares the base .carousel_track class) keeps its horizontal
+       swipe behaviour untouched. */
+    .project_carousel .carousel_track {
+        flex-direction: column;
+        overflow-x: visible;
+        overflow-y: visible;
+        scroll-snap-type: none;
+    }
+
     .carousel_track .project_card {
-        flex: 0 0 85%;
+        flex: 0 0 auto;
+        width: 100%;
     }
 
     .carousel_arrow_btn {
@@ -215,6 +225,7 @@
     /* Mobile nav: reveal the disclosure toggle, stack links */
     .nav_disclosure {
         width: 100%;
+        text-align: center;
     }
 
     .nav_disclosure > summary.nav_toggle {

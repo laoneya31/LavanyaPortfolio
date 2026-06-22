@@ -50,18 +50,26 @@
         <h1>Dinely</h1>
 
         <div class="project_banner">
-            <img src="img/dinely1.png" alt="Dinely cover image placeholder"
+            <img src="img/dinely assets/dinely screen stack.png" alt="Dinely cover image placeholder"
                 loading="eager" width="1200" height="675">
         </div>
 
         <section class="page_section" aria-labelledby="process_heading">
             <h2 id="process_heading">Process</h2>
-            <div class="project_prose">
-                <p>Dinely is a mobile app that helps users discover nearby restaurants, browse menus, and reserve tables all in one place. The app personalizes recommendations based on dietary restrictions and cuisine preferences, combining real-time restaurant data with a seamless reservation experience. It is built with JavaScript and React, and tested on Expo Go.</p>
-                <p>I designed and implemented the end-to-end authentication flow using Firebase Authentication. This included sign-in, sign-up, password reset, and a four-step onboarding process that collected the user's name, dietary restrictions, cuisine preferences, and login credentials. Furthermore, I set up and managed the cloud database layer responsible for persisting user profiles beyond a single device session. Dietary and cuisine preferences, profile edits, and account details are all synced to Firestore in real time, giving users a consistent experience across logins.</p>
-                <p>Additionally, lightweight on-device data persistence using Async Storage for UI preferences like color theme, appearance mode (light/dark/system), and notification settings was also added. Finally, I integrated native camera access to allow users to take and upload a profile photo directly from their device. Handled permission requests, image capture, and local storage of the selected image so it persists in the user's profile view.</p>
-                <p>Working collaboratively on GitHub for the first time introduced friction early on due to frequent merge conflicts caused by team members committing directly to main. We resolved this by adopting a branch-based workflow, which dramatically reduced conflicts and improved our parallel development process. We also struggled with integrating local and cloud storage, as some properties, like reservations, that were stored locally, would show up across accounts on the same device. We linked all local storage to the cloud using the unique ID, which removed this issue.</p>
-                <p>The final app delivered a fully functional, personalized dining discovery experience with real authentication, cloud-synced profiles, local data persistence, and native camera support, all with a clean, polished, and easy-to-navigate design.</p>
+            <div class="process_grid">
+                <div class="project_prose">
+                    <p>Dinely is a mobile app that helps users discover nearby restaurants, browse menus, and reserve tables all in one place. The app personalizes recommendations based on dietary restrictions and cuisine preferences, combining real-time restaurant data with a seamless reservation experience. It is built with JavaScript and React, and tested on Expo Go.</p>
+                    <p>I designed and implemented the end-to-end authentication flow using Firebase Authentication. This included sign-in, sign-up, password reset, and a four-step onboarding process that collected the user's name, dietary restrictions, cuisine preferences, and login credentials. Furthermore, I set up and managed the cloud database layer responsible for persisting user profiles beyond a single device session. Dietary and cuisine preferences, profile edits, and account details are all synced to Firestore in real time, giving users a consistent experience across logins.</p>
+                    <p>Additionally, lightweight on-device data persistence using Async Storage for UI preferences like color theme, appearance mode (light/dark/system), and notification settings was also added. Finally, I integrated native camera access to allow users to take and upload a profile photo directly from their device. Handled permission requests, image capture, and local storage of the selected image so it persists in the user's profile view.</p>
+                    <p>Working collaboratively on GitHub for the first time introduced friction early on due to frequent merge conflicts caused by team members committing directly to main. We resolved this by adopting a branch-based workflow, which dramatically reduced conflicts and improved our parallel development process. We also struggled with integrating local and cloud storage, as some properties, like reservations, that were stored locally, would show up across accounts on the same device. We linked all local storage to the cloud using the unique ID, which removed this issue.</p>
+                    <p>The final app delivered a fully functional, personalized dining discovery experience with real authentication, cloud-synced profiles, local data persistence, and native camera support, all with a clean, polished, and easy-to-navigate design.</p>
+                </div>
+                <aside class="project_sketches">
+                    <figure>
+                        <img src="img/dinely%20assets/dinely%20sketches.png" alt="Dinely early sketches">
+                        <figcaption>Early hand-drawn sketches</figcaption>
+                    </figure>
+                </aside>
             </div>
         </section>
 
@@ -86,12 +94,10 @@
             </a>
 
             <nav class="footer_nav" aria-label="Footer">
-                <a class="nav_link" href="projects.html">Projects</a>
                 <a class="nav_link" href="contact.html">Contact</a>
                 <a class="nav_link" href="style_guide.html">Style Guide</a>
+                <a class="nav_link" href="citations.html">Citations</a>
             </nav>
-
-            <p class="footer_tagline">Design felt before it's understood.</p>
         </div>
     </footer>
 

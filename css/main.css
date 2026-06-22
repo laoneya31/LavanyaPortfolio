@@ -610,8 +610,8 @@ header, main, footer, section {
     border-top: 1px solid var(--color_border);
     padding: 2.5rem 3rem;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
     gap: 1.5rem;
     margin-top: 5rem;
     margin-left: -3rem;
@@ -633,15 +633,6 @@ header, main, footer, section {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-}
-
-.footer_tagline {
-    font-size: var(--size_small);
-    color: var(--color_muted);
-    font-style: italic;
-    max-width: 180px;
-    text-align: right;
-    line-height: 1.5;
 }
 
 
@@ -1097,6 +1088,36 @@ header, main, footer, section {
 
 .project_prose p + p {
     margin-top: 1rem;
+}
+
+/* Process section — prose + sticky sidebar of supporting images */
+.process_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.project_sketches {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.project_sketches img {
+    display: block;
+    width: 100%;
+}
+
+.project_sketches figure {
+    margin: 0;
+}
+
+.project_sketches figcaption {
+    margin-top: 0.5rem;
+    font-size: var(--size_small);
+    color: #E49091;
+    text-align: center;
 }
 
 /* Responsive 16:9 video embed */
