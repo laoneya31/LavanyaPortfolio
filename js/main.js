@@ -1,31 +1,16 @@
-/* ============================================================
-   MAIN.JS — Lavanya's Portfolio
-   Progressive enhancement only. Every page works without this
-   file; the code below just layers convenience on top. Each
-   block is guarded so missing elements are simply skipped.
-   ============================================================ */
-
 (function () {
     'use strict';
 
-    // Uses the prefers-reduced-motion media feature to respect the user's
-    // OS-level motion preference.
+    // Uses the prefers-reduced-motion media feature to respect the user's OS-level motion preference.
     // https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 
-    /* --------------------------------------------------------
-       1. MOBILE NAV DISCLOSURE (<details class="nav_disclosure">)
-       No-JS baseline: native <details> toggle. JS keeps it in
-       sync with the breakpoint and closes it on link / outside
-       click. Desktop needs [open] so the nav renders inline.
-       -------------------------------------------------------- */
     (function mobileNav() {
         var nav = document.querySelector('.nav_disclosure');
         if (!nav) { return; }
 
-        // Uses matchMedia to sync JS behavior to a CSS breakpoint.
-        // https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
+        // Uses matchMedia to sync JS behavior to a CSS breakpoint referenced by https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
         var mobile = window.matchMedia('(max-width: 600px)');
 
         function sync() {
@@ -58,14 +43,6 @@
     })();
 
 
-    /* --------------------------------------------------------
-       2. REUSABLE CAROUSEL
-       Shared by the home featured-project carousel and the
-       about-page photo carousel. Native scroll-snap is the
-       no-JS baseline; this wires the prev/next arrows, dims
-       them at the track ends, and (if present) updates a
-       "Photo X of Y" live region.
-       -------------------------------------------------------- */
     function initCarousel(trackSelector, options) {
         options = options || {};
         var itemsPerView = options.itemsPerView || 1;
@@ -123,12 +100,8 @@
     initCarousel('.photo_carousel_track', { itemsPerView: 1 });
 
 
-    /* --------------------------------------------------------
-       3. PROJECT DISCIPLINE FILTER (projects.html)
-       -------------------------------------------------------- */
-    // Adapted the show/hide-by-category approach from a tutorial on
-    // filtering lists with JS.
-    // https://www.w3schools.com/howto/howto_js_filter_lists.asp
+
+    // Adapted the show/hide-by-category approach from a tutorial on filtering lists with JS. learnt via https://www.w3schools.com/howto/howto_js_filter_lists.asp
     (function projectFilter() {
         var radios = document.querySelectorAll('input[name="discipline"]');
         if (!radios.length) { return; }
@@ -150,14 +123,8 @@
     })();
 
 
-    /* --------------------------------------------------------
-       4. CONTACT FORM VALIDATION (contact.html)
-       Browser-native validation is the no-JS baseline; here we
-       take over with inline messages + an aria-live status.
-       -------------------------------------------------------- */
-    // Implements custom client-side form validation instead of relying on
-    // default browser error bubbles.
-    // https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation
+    // Implements form validation instead of relying on default browser error bubbles.
+    // learnt from https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation
     (function contactForm() {
         var form = document.querySelector('.contact_form');
         if (!form) { return; }
@@ -165,7 +132,6 @@
         var status = form.querySelector('.form_status');
         var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        // Take over validation now that JS is available.
         form.noValidate = true;
 
         function fieldError(field, message) {
@@ -225,85 +191,9 @@
     })();
 
 
-    /* --------------------------------------------------------
-       5. COPY-TO-CLIPBOARD (contact.html)
-       -------------------------------------------------------- */
-    // Uses the Clipboard API to copy the email address to the user's
-    // clipboard.
-    // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API
-    (function copyEmail() {
-        var buttons = document.querySelectorAll('.copy_email_btn');
-        if (!buttons.length) { return; }
-
-        buttons.forEach(function (btn) {
-            var original = btn.textContent;
-            var text = btn.getAttribute('data-copy') || '';
-
-            btn.addEventListener('click', function () {
-                var done = function () {
-                    btn.textContent = 'Copied!';
-                    setTimeout(function () { btn.textContent = original; }, 2000);
-                };
-
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(text).then(done).catch(function () {
-                        btn.textContent = 'Press Ctrl+C';
-                        setTimeout(function () { btn.textContent = original; }, 2000);
-                    });
-                } else {
-                    // Very old browsers: select-and-copy fallback.
-                    var temp = document.createElement('textarea');
-                    temp.value = text;
-                    document.body.appendChild(temp);
-                    temp.select();
-                    try { document.execCommand('copy'); done(); } catch (err) { /* no-op */ }
-                    document.body.removeChild(temp);
-                }
-            });
-        });
-    })();
-
-
-    /* --------------------------------------------------------
-       6. SCROLL-REVEAL — ethos grid (about.html)
-       Items are visible by default; only animate when motion is
-       allowed and IntersectionObserver is supported.
-       -------------------------------------------------------- */
-    (function scrollReveal() {
-        var grid = document.querySelector('.ethos_keywords');
-        if (!grid) { return; }
-
-        var items = grid.querySelectorAll('.reveal_item');
-        if (!items.length) { return; }
-
-        if (reduceMotion || !('IntersectionObserver' in window)) {
-            return; // leave everything visible, no animation
-        }
-
-        grid.classList.add('js_reveal');
-
-        var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    var el = entry.target;
-                    var index = Array.prototype.indexOf.call(items, el);
-                    el.style.transitionDelay = (index % 3) * 0.08 + 's';
-                    el.classList.add('is_revealed');
-                    observer.unobserve(el);
-                }
-            });
-        }, { threshold: 0.2 });
-
-        items.forEach(function (item) { observer.observe(item); });
-    })();
-
-
-    /* --------------------------------------------------------
-       8. BACK TO TOP (project detail pages)
-       -------------------------------------------------------- */
-    // Uses window.scrollTo with smooth-scroll behavior, disabled when
-    // reduced motion is preferred.
-    // https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
+  
+    // Uses window.scrollTo with smooth-scroll behavior, disabled when reduced motion is preferred.
+    // learnt from https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
     (function backToTop() {
         var btn = document.querySelector('.back_to_top');
         if (!btn) { return; }

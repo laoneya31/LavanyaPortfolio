@@ -203,10 +203,6 @@ header, main, footer, section {
     transition: border-color var(--transition), background-color var(--transition), transform var(--transition);
 }
 
-.copy_email_btn {
-    padding: 0.3rem 1rem;
-}
-
 .secondary_button:hover {
     border-color: #E49091;
     color: #E49091;
@@ -1163,19 +1159,6 @@ header, main, footer, section {
     gap: 1.5rem;
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
-    .js_reveal .reveal_item {
-        opacity: 0;
-        transform: translateY(16px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .js_reveal .reveal_item.is_revealed {
-        opacity: 1;
-        transform: none;
-    }
-}
 
 
 @keyframes fade-in-up {

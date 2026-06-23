@@ -3,8 +3,6 @@
    Typefaces: Corinthia (display) · Manrope (ui)
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Corinthia:wght@400;700&family=Manrope:wght@300;400;500;600;700&display=swap');
-
 /* ── Type Scale Variables ── */
 :root {
     --font_display:     'Corinthia', cursive;
@@ -111,10 +109,8 @@ ol {
 
 ol li {
     counter-increment: lavanya_counter;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 0.4rem 0;
+    position: relative;
+    padding: 0.4rem 0 0.4rem 3rem;
     font-family: var(--font_ui);
     font-size: var(--size_p);
     font-weight: 400;
@@ -124,11 +120,11 @@ ol li {
 
 ol li::before {
     content: counter(lavanya_counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
     font-family: var(--font_ui);
     font-size: var(--size_small);
     font-weight: 600;
     color: var(--color_muted);
-    min-width: 2rem;
-    padding-top: 0.2rem;
-    flex-shrink: 0;
 }
