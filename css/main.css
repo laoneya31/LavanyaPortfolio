@@ -1,9 +1,3 @@
-/* ============================================
-   MAIN.CSS — Lavanya's Portfolio
-   Colours, reset, interactive elements, components
-   ============================================ */
-
-/* ── CSS Custom Properties ── */
 :root {
     /* Colour */
     --color_bg:             #F9EDED;
@@ -26,7 +20,7 @@
     --transition:           0.25s ease;
 }
 
-/* ── Reset ── */
+/* Reset  */
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -61,7 +55,7 @@ a {
 h2 {
     margin-bottom: 2rem;
 }
-/* ── Fixed background blur (stays in place on scroll) ── */
+/*Fixed background blur (stays in place on scroll)*/
 
 .bg_blur {
     position: fixed;
@@ -79,7 +73,7 @@ h2 {
     z-index: 0;
 }
 
-/* ── Everything sits above the blur ── */
+/*Everything sits above the blur*/
 
 header, main, footer, section {
     position: relative;
@@ -87,9 +81,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   IN-TEXT LINK
-   ============================================ */
+/* in-text link */
 
 .in_text_link {
     font-family: var(--font_ui);
@@ -116,9 +108,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   NAVIGATION LINK
-   ============================================ */
+/* nav link */
 
 .nav_link {
     font-family: var(--font_ui);
@@ -161,9 +151,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   PRIMARY BUTTON (submit)
-   ============================================ */
+/* primary button */
 
 .primary_button {
     display: inline-flex;
@@ -195,9 +183,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   SECONDARY BUTTON (reset)
-   ============================================ */
+/* secondary button */
 
 .secondary_button {
     display: inline-flex;
@@ -235,9 +221,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   TEXT INPUT FIELD WITH LABEL
-   ============================================ */
+/* text-input feild with label */
 
 .form_group {
     display: flex;
@@ -277,9 +261,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   RADIO INPUT FIELD WITH LABEL
-   ============================================ */
+/* radio input feild with label */
 
 .radio_group {
     display: flex;
@@ -380,12 +362,10 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   IMAGE AS A LINK (project card)
-   ============================================ */
+/* project card */
 
 /* Glassmorphism (translucent background + backdrop-filter blur) built
-   following a YouTube tutorial on the effect — see citations.html. */
+   following a YouTube tutorials on the effect — see citations.html. */
 .project_card {
     display: block;
     text-decoration: none;
@@ -466,9 +446,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   HEADER / NAV
-   ============================================ */
+/* header and nav */
 
 .header_bar {
     position: sticky;
@@ -508,9 +486,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   PROJECT LISTING GRID
-   ============================================ */
+/* project list */
 
 .project_list_grid {
     display: grid;
@@ -519,9 +495,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   PROJECT DETAIL
-   ============================================ */
+/* project detail */
 
 .project_detail_grid {
     display: grid;
@@ -547,9 +521,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   CONTACT SECTION
-   ============================================ */
+/* contact */
 
 .contact_grid {
     display: grid;
@@ -578,9 +550,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   ABOUT — two-column (photo carousel + bio)
-   ============================================ */
+/* about me */
 
 .about_grid {
     display: grid;
@@ -600,9 +570,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   FOOTER
-   ============================================ */
+/*footer */
 
 .footer_bar {
     border-top: 1px solid var(--color_border);
@@ -634,9 +602,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   STYLE GUIDE — specific classes
-   ============================================ */
+/* style guide */
 
 /* Page wrapper */
 .style_guide_page {
@@ -749,8 +715,7 @@ header, main, footer, section {
     object-fit: contain;
 }
 
-/* Photo grid demo (Images section) — flat showcase of every real
-   image asset, no caption association needed. */
+/* Photo grid  */
 .photo_grid_demo {
     display: flex;
     gap: 2rem;
@@ -770,7 +735,7 @@ header, main, footer, section {
     display: block;
 }
 
-/* Ethos block */
+/* Ethos  */
 .ethos_block {
     border-radius: var(--radius_card);
     padding: 2rem;
@@ -789,11 +754,6 @@ header, main, footer, section {
     gap: 0.4rem;
 }
 
-
-/* ============================================
-   STYLE GUIDE — demo-only overrides
-   (constrain/restyle live demos inside .element_detail)
-   ============================================ */
 
 .form_group_demo {
     max-width: 340px;
@@ -835,11 +795,9 @@ header, main, footer, section {
 .colour_swatch_muted    { background: #D9BFBF; }
 
 
-/* ============================================
-   SITE LAYOUT PRIMITIVES (shared page shell)
-   ============================================ */
+/* website layout */
 
-/* Visually hidden (screen-reader only) — for accessible section
+/* Visually hidden (screen-reader only) for accessible section
    headings that shouldn't show visually. */
 .visually_hidden {
     position: absolute;
@@ -853,7 +811,7 @@ header, main, footer, section {
     border: 0;
 }
 
-/* Visually-hidden-until-focused skip link */
+/* Visually hidden until focused skip link */
 .skip_link {
     position: absolute;
     left: -9999px;
@@ -893,12 +851,6 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   MOBILE NAV DISCLOSURE (<details>/<summary>)
-   Desktop: behaves as a plain inline nav; the
-   summary toggle only appears at <=600px.
-   ============================================ */
-
 .nav_disclosure > summary.nav_toggle {
     display: none;
     list-style: none;
@@ -910,18 +862,12 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   HERO WORDMARK (home)
-   ============================================ */
+/*home page */
 
 .hero {
     text-align: center;
     padding: 3.5rem 0 1.5rem;
 }
-
-/* Wordmark utilities — a small label + a large display name. The two
-   pieces stack in either order: home is name-then-label ("Lavanya's" /
-   "portfolio"); about is label-then-name ("about" / "Lavanya"). */
 .wordmark_main {
     display: block;
     font-family: var(--font_display);
@@ -942,17 +888,13 @@ header, main, footer, section {
     color: var(--color_body);
 }
 
-/* Home hero: tuck the "portfolio" label up under "Lavanya's" */
 .hero .wordmark_label {
     margin-top: -0.45em;
     text-indent: 0.32em;
 }
 
 
-/* ============================================
-   FEATURED PROJECT CAROUSEL (home)
-   Native scroll-snap is the no-JS baseline.
-   ============================================ */
+/* projects in home page */
 
 .project_carousel {
     position: relative;
@@ -1015,8 +957,7 @@ header, main, footer, section {
     cursor: default;
 }
 
-/* Photo carousel (about) — one tall photo per view. Reuses the
-   .carousel_track base and .carousel_arrow_btn from the home carousel. */
+/* about me photo carousel */
 .photo_carousel {
     margin-top: 2.5rem;
     position: relative;
@@ -1038,9 +979,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   PROJECTS LISTING — 2-column modifier + filter
-   ============================================ */
+/* projects page with filters*/
 
 .projects_grid_2col {
     grid-template-columns: repeat(2, 1fr);
@@ -1064,9 +1003,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   PROJECT DETAIL — back link, banner, media
-   ============================================ */
+/* project details*/
 
 .back_link {
     display: inline-flex;
@@ -1118,7 +1055,7 @@ header, main, footer, section {
     margin-top: 1rem;
 }
 
-/* Process section — prose + sticky sidebar of supporting images */
+/* Process section*/
 .process_grid {
     display: grid;
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
@@ -1169,7 +1106,7 @@ header, main, footer, section {
     border: 0;
 }
 
-/* PDF download block (uses .primary_button for the link) */
+/* PDF download block  */
 .download_block {
     display: flex;
     align-items: center;
@@ -1178,9 +1115,7 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   CONTACT — email row, copy button, form status
-   ============================================ */
+/* contact page */
 
 .email_row {
     display: flex;
@@ -1220,23 +1155,12 @@ header, main, footer, section {
 }
 
 
-/* ============================================
-   EMPLOYMENT-INTEREST CARDS (about)
-   ============================================ */
-
 .info_card_grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
-
-/* ============================================
-   SCROLL-REVEAL HOOKS (about ethos grid)
-   Items are visible by default (no-JS / reduced
-   motion). Animation only applies once JS adds
-   .js_reveal and the user allows motion.
-   ============================================ */
 
 @media (prefers-reduced-motion: no-preference) {
     .js_reveal .reveal_item {
@@ -1251,10 +1175,6 @@ header, main, footer, section {
     }
 }
 
-
-/* ============================================
-   HERO FADE-IN-UP (home)
-   ============================================ */
 
 @keyframes fade-in-up {
     from {
@@ -1273,10 +1193,6 @@ header, main, footer, section {
     }
 }
 
-
-/* ============================================
-   BACK TO TOP
-   ============================================ */
 
 .back_to_top {
     position: fixed;
