@@ -1,9 +1,5 @@
-/* ============================================
-   FONTS.CSS — Lavanya's Portfolio
-   Typefaces: Corinthia (display) · Manrope (ui)
-   ============================================ */
 
-/* ── Type Scale Variables ── */
+/* Type Scale Var */
 :root {
     --font_display:     'Corinthia', cursive;
     --font_ui:          'Manrope', sans-serif;
@@ -17,7 +13,7 @@
     --size_code:        0.8rem;
 }
 
-/* ── Base Type Elements ── */
+/* elements */
 
 h1 {
     font-family: var(--font_display);
@@ -37,9 +33,7 @@ h2 {
     letter-spacing: -0.01em;
 }
 
-/* Brand wordmark — carries the old <h1> typographic identity so the
-   header/footer logo looks identical, while freeing <h1> for one real
-   page title per page (header/footer override the size below). */
+/* lavanya wordmark/logo */
 .brand_mark {
     display: inline-block;
     font-family: var(--font_display);
@@ -99,7 +93,7 @@ label {
     letter-spacing: 0.02em;
 }
 
-/* ── Numbered List ── */
+/* num list */
 
 ol {
     list-style: none;
