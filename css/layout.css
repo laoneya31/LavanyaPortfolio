@@ -210,7 +210,9 @@
         display: none;
     }
 
-    /* Mobile nav menu toggle bar. adapted from a tutorial on building a dropdown menu — see citations.html. */
+    /* Mobile nav menu toggle bar, adapted from a tutorial on building a
+       dropdown menu.
+       https://www.w3schools.com/howto/howto_js_dropdown.asp */
     .nav_disclosure {
         width: 100%;
         text-align: center;

@@ -365,7 +365,9 @@ header, main, footer, section {
 /* project card */
 
 /* Glassmorphism (translucent background + backdrop-filter blur) built
-   following a YouTube tutorials on the effect — see citations.html. */
+   following YouTube tutorials on the effect.
+   https://www.youtube.com/watch?v=to-GtCquuwo and
+   https://www.youtube.com/watch?v=Cv8zFvM8fEk */
 .project_card {
     display: block;
     text-decoration: none;

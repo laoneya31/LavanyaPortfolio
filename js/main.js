@@ -9,7 +9,8 @@
     'use strict';
 
     // Uses the prefers-reduced-motion media feature to respect the user's
-    // OS-level motion preference — see citations.html.
+    // OS-level motion preference.
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 
@@ -23,7 +24,8 @@
         var nav = document.querySelector('.nav_disclosure');
         if (!nav) { return; }
 
-        // Uses matchMedia to sync JS behavior to a CSS breakpoint — see citations.html.
+        // Uses matchMedia to sync JS behavior to a CSS breakpoint.
+        // https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
         var mobile = window.matchMedia('(max-width: 600px)');
 
         function sync() {
@@ -125,7 +127,8 @@
        3. PROJECT DISCIPLINE FILTER (projects.html)
        -------------------------------------------------------- */
     // Adapted the show/hide-by-category approach from a tutorial on
-    // filtering lists with JS — see citations.html.
+    // filtering lists with JS.
+    // https://www.w3schools.com/howto/howto_js_filter_lists.asp
     (function projectFilter() {
         var radios = document.querySelectorAll('input[name="discipline"]');
         if (!radios.length) { return; }
@@ -153,7 +156,8 @@
        take over with inline messages + an aria-live status.
        -------------------------------------------------------- */
     // Implements custom client-side form validation instead of relying on
-    // default browser error bubbles — see citations.html.
+    // default browser error bubbles.
+    // https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation
     (function contactForm() {
         var form = document.querySelector('.contact_form');
         if (!form) { return; }
@@ -225,7 +229,8 @@
        5. COPY-TO-CLIPBOARD (contact.html)
        -------------------------------------------------------- */
     // Uses the Clipboard API to copy the email address to the user's
-    // clipboard — see citations.html.
+    // clipboard.
+    // https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API
     (function copyEmail() {
         var buttons = document.querySelectorAll('.copy_email_btn');
         if (!buttons.length) { return; }
@@ -297,7 +302,8 @@
        8. BACK TO TOP (project detail pages)
        -------------------------------------------------------- */
     // Uses window.scrollTo with smooth-scroll behavior, disabled when
-    // reduced motion is preferred — see citations.html.
+    // reduced motion is preferred.
+    // https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
     (function backToTop() {
         var btn = document.querySelector('.back_to_top');
         if (!btn) { return; }
