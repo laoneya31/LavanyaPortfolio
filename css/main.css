@@ -93,7 +93,7 @@ header, main, footer, section {
 
 .in_text_link {
     font-family: var(--font_ui);
-    color: var(--color_heading);
+    color: #E49091;
     text-decoration: none;
     text-decoration-color: var(--color_muted);
     text-underline-offset: 3px;
@@ -102,16 +102,16 @@ header, main, footer, section {
 }
 
 .in_text_link:hover {
-    color: #DEA9A9;
+    color: #574848;
     text-decoration: underline;
-    text-decoration-color: #DEA9A9;
+    text-decoration-color: #574848;
 }
 
 .in_text_link:focus-visible {
     outline: 2px solid var(--color_heading);
-    color: #DEA9A9;
+    color: #574848;
     text-decoration: underline;
-    text-decoration-color: #DEA9A9;
+    text-decoration-color: #574848;
     outline-offset: 3px;
 }
 
@@ -144,12 +144,15 @@ header, main, footer, section {
     transition: width var(--transition);
 }
 
-.nav_link:hover {
-    color: var(--color_heading);
+.nav_link:hover,
+.nav_link:focus-visible {
+    color: #E49091;
 }
 
-.nav_link:hover::after {
+.nav_link:hover::after,
+.nav_link:focus-visible::after {
     width: 100%;
+    background-color: #E49091;
 }
 
 .nav_link:focus-visible {
@@ -186,18 +189,6 @@ header, main, footer, section {
     transform: translateY(-1px);
 }
 
-.primary_button .btn_arrow {
-    width: 13px;
-    height: 13px;
-    object-fit: contain;
-    filter: brightness(10);
-    transition: filter var(--transition), transform var(--transition);
-}
-
-.primary_button:hover .btn_arrow {
-    transform: translateX(3px);
-}
-
 .primary_button:focus-visible {
     outline: 2px solid var(--color_heading);
     outline-offset: 3px;
@@ -226,16 +217,21 @@ header, main, footer, section {
     transition: border-color var(--transition), background-color var(--transition), transform var(--transition);
 }
 
+.copy_email_btn {
+    padding: 0.3rem 1rem;
+}
+
 .secondary_button:hover {
-    border-color: var(--color_heading);
-    background-color: #E49091;
-    color: #FFFFFF;
+    border-color: #E49091;
+    color: #E49091;
     transform: translateY(-1px);
 }
 
 .secondary_button:focus-visible {
     outline: 2px solid var(--color_heading);
     outline-offset: 3px;
+    border-color: #E49091;
+    color: #E49091;
 }
 
 
@@ -298,7 +294,7 @@ header, main, footer, section {
     gap: 0.75rem;
     padding: 0.4rem 0.6rem;
     margin: 0 -0.6rem;
-    border-radius: var(--radius_input);
+    border-radius: var(--radius_card);
     transition: background-color var(--transition);
 }
 
@@ -388,6 +384,8 @@ header, main, footer, section {
    IMAGE AS A LINK (project card)
    ============================================ */
 
+/* Glassmorphism (translucent background + backdrop-filter blur) built
+   following a YouTube tutorial on the effect — see citations.html. */
 .project_card {
     display: block;
     text-decoration: none;
@@ -424,8 +422,8 @@ header, main, footer, section {
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     background-image: url('../img/hover_diamond.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -625,7 +623,7 @@ header, main, footer, section {
 }
 
 .footer_logo .brand_mark {
-    font-size: 2rem;
+    font-size: 2.25rem;
     line-height: 1;
 }
 
@@ -751,6 +749,27 @@ header, main, footer, section {
     object-fit: contain;
 }
 
+/* Photo grid demo (Images section) — flat showcase of every real
+   image asset, no caption association needed. */
+.photo_grid_demo {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.photo_grid_demo figure {
+    margin: 0;
+    width: 180px;
+}
+
+.photo_grid_demo figure img {
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
+    border-radius: var(--radius_card);
+    display: block;
+}
+
 /* Ethos block */
 .ethos_block {
     border-radius: var(--radius_card);
@@ -869,7 +888,8 @@ header, main, footer, section {
 
 .page_intro {
     max-width: 60ch;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -998,16 +1018,23 @@ header, main, footer, section {
 /* Photo carousel (about) — one tall photo per view. Reuses the
    .carousel_track base and .carousel_arrow_btn from the home carousel. */
 .photo_carousel {
+    margin-top: 2.5rem;
     position: relative;
 }
 
 .photo_carousel_slide {
     flex: 0 0 100%;
     width: 100%;
+    scroll-snap-align: start;
+    margin: 0;
+}
+
+.photo_carousel_slide img {
+    width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     border-radius: var(--radius_card);
-    scroll-snap-align: start;
+    display: block;
 }
 
 
@@ -1053,6 +1080,7 @@ header, main, footer, section {
     color: var(--color_heading);
     text-decoration: none;
     transition: gap var(--transition);
+    margin-bottom: 1rem;
 }
 
 .back_link img {
@@ -1113,7 +1141,9 @@ header, main, footer, section {
     margin: 0;
 }
 
-.project_sketches figcaption {
+.project_sketches figcaption,
+.photo_carousel_slide figcaption,
+.photo_grid_demo figcaption {
     margin-top: 0.5rem;
     font-size: var(--size_small);
     color: #E49091;
@@ -1223,19 +1253,30 @@ header, main, footer, section {
 
 
 /* ============================================
-   READING PROGRESS BAR + BACK TO TOP
+   HERO FADE-IN-UP (home)
    ============================================ */
 
-.reading_progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    width: 0;
-    background-color: var(--color_heading);
-    z-index: 200;
-    transition: width 0.1s linear;
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+    .hero h1 {
+        animation: fade-in-up 0.6s ease-out;
+    }
+}
+
+
+/* ============================================
+   BACK TO TOP
+   ============================================ */
 
 .back_to_top {
     position: fixed;

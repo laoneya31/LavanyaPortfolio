@@ -222,7 +222,9 @@
         display: none;
     }
 
-    /* Mobile nav: reveal the disclosure toggle, stack links */
+    /* Mobile nav: reveal the disclosure toggle, stack links. The
+       toggle/collapse approach was adapted from a tutorial on building
+       a dropdown menu — see citations.html. */
     .nav_disclosure {
         width: 100%;
         text-align: center;

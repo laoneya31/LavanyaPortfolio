@@ -8,6 +8,8 @@
 (function () {
     'use strict';
 
+    // Uses the prefers-reduced-motion media feature to respect the user's
+    // OS-level motion preference — see citations.html.
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 
@@ -21,6 +23,7 @@
         var nav = document.querySelector('.nav_disclosure');
         if (!nav) { return; }
 
+        // Uses matchMedia to sync JS behavior to a CSS breakpoint — see citations.html.
         var mobile = window.matchMedia('(max-width: 600px)');
 
         function sync() {
@@ -121,6 +124,8 @@
     /* --------------------------------------------------------
        3. PROJECT DISCIPLINE FILTER (projects.html)
        -------------------------------------------------------- */
+    // Adapted the show/hide-by-category approach from a tutorial on
+    // filtering lists with JS — see citations.html.
     (function projectFilter() {
         var radios = document.querySelectorAll('input[name="discipline"]');
         if (!radios.length) { return; }
@@ -147,6 +152,8 @@
        Browser-native validation is the no-JS baseline; here we
        take over with inline messages + an aria-live status.
        -------------------------------------------------------- */
+    // Implements custom client-side form validation instead of relying on
+    // default browser error bubbles — see citations.html.
     (function contactForm() {
         var form = document.querySelector('.contact_form');
         if (!form) { return; }
@@ -200,7 +207,7 @@
                 if (firstInvalid) { firstInvalid.focus(); }
                 return;
             }
-            // Valid — let the mailto fallback (or real endpoint) proceed.
+            // Valid — let the mailto fallback proceed.
             if (status) { status.textContent = 'Thanks! Opening your email client to send the message…'; }
         });
 
@@ -217,6 +224,8 @@
     /* --------------------------------------------------------
        5. COPY-TO-CLIPBOARD (contact.html)
        -------------------------------------------------------- */
+    // Uses the Clipboard API to copy the email address to the user's
+    // clipboard — see citations.html.
     (function copyEmail() {
         var buttons = document.querySelectorAll('.copy_email_btn');
         if (!buttons.length) { return; }
@@ -285,28 +294,10 @@
 
 
     /* --------------------------------------------------------
-       7. READING PROGRESS BAR (project detail pages)
-       -------------------------------------------------------- */
-    (function readingProgress() {
-        var bar = document.querySelector('.reading_progress');
-        if (!bar) { return; }
-
-        function update() {
-            var doc = document.documentElement;
-            var max = doc.scrollHeight - doc.clientHeight;
-            var pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
-            bar.style.width = pct + '%';
-        }
-
-        window.addEventListener('scroll', update, { passive: true });
-        window.addEventListener('resize', update);
-        update();
-    })();
-
-
-    /* --------------------------------------------------------
        8. BACK TO TOP (project detail pages)
        -------------------------------------------------------- */
+    // Uses window.scrollTo with smooth-scroll behavior, disabled when
+    // reduced motion is preferred — see citations.html.
     (function backToTop() {
         var btn = document.querySelector('.back_to_top');
         if (!btn) { return; }

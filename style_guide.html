@@ -43,7 +43,7 @@
 
         <!-- Page title -->
         <div class="sg_section">
-            <h1>Style Guide</h1>
+            <h1>Style guide</h1>
         </div>
 
 
@@ -65,7 +65,7 @@
                     </div>
 
                     <h4>Rendered element:</h4>
-                    <p>This is an <a class="in_text_link" href="#">in-text link</a>. It sits quietly within prose without demanding attention.</p>
+                    <p>This is an <a class="in_text_link" href="#">in-text link</a></p>
 
                     <h4>CSS selector:</h4>
                     <small class="css_selector">.in_text_link</small>
@@ -81,15 +81,13 @@
                     <h4>Code:</h4>
                     <div class="code_block">
                         <code>&lt;div class="header_nav_bar"&gt;</code>
-                        <code>&nbsp;&nbsp;&lt;a class="nav_link" href="#interactive_elements"&gt;Interactive Elements&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;a class="nav_link" href="#interactive_elements" aria-current="page"&gt;Interactive Elements&lt;/a&gt;</code>
                         <code>&lt;/div&gt;</code>
                     </div>
 
                     <h4>Rendered element:</h4>
                     <div class="header_nav_bar">
-                        <a class="nav_link" href="#interactive_elements">Interactive Elements</a>
-                        <a class="nav_link" href="#text_styling">Text Styling</a>
-                        <a class="nav_link" href="#combined_elements">Combined Elements</a>
+                        <a class="nav_link" href="#interactive_elements" aria-current="page">Interactive Elements</a>
                     </div>
 
                     <h4>CSS selector:</h4>
@@ -105,14 +103,13 @@
                 <div class="element_detail">
                     <h4>Code:</h4>
                     <div class="code_block">
-                        <code>&lt;a href="#" class="primary_button"&gt;Send Message&lt;/a&gt;</code>
+                        <code>&lt;button class="primary_button" type="submit"&gt;Send Message&lt;/button&gt;</code>
                     </div>
 
                     <h4>Rendered element:</h4>
-                    <a href="#" class="primary_button">
+                    <button class="primary_button" type="submit">
                         Send Message
-                        <img class="btn_arrow" src="img/right_arrow.png" alt="">
-                    </a>
+                    </button>
 
                     <h4>CSS selector:</h4>
                     <small class="css_selector">.primary_button</small>
@@ -127,11 +124,11 @@
                 <div class="element_detail">
                     <h4>Code:</h4>
                     <div class="code_block">
-                        <code>&lt;a href="#" class="secondary_button"&gt;Reset&lt;/a&gt;</code>
+                        <code>&lt;button class="secondary_button" type="reset"&gt;Reset&lt;/button&gt;</code>
                     </div>
 
                     <h4>Rendered element:</h4>
-                    <a href="#" class="secondary_button">Reset</a>
+                    <button class="secondary_button" type="reset">Reset</button>
 
                     <h4>CSS selector:</h4>
                     <small class="css_selector">.secondary_button</small>
@@ -148,14 +145,16 @@
                     <div class="code_block">
                         <code>&lt;div class="form_group"&gt;</code>
                         <code>&nbsp;&nbsp;&lt;label for="full_name"&gt;Full Name&lt;/label&gt;</code>
-                        <code>&nbsp;&nbsp;&lt;input id="full_name" type="text" placeholder="Lavanya Sharma"&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;input id="full_name" type="text" placeholder="Lavanya Sharma" aria-describedby="full_name_error"&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;span class="field_error" id="full_name_error"&gt;&lt;/span&gt;</code>
                         <code>&lt;/div&gt;</code>
                     </div>
 
                     <h4>Rendered element:</h4>
                     <div class="form_group form_group_demo">
                         <label for="sg_full_name">Full Name</label>
-                        <input id="sg_full_name" type="text" placeholder="Lavanya Sharma">
+                        <input id="sg_full_name" type="text" placeholder="Lavanya Sharma" aria-describedby="sg_full_name_error">
+                        <span class="field_error" id="sg_full_name_error"></span>
                     </div>
 
                     <h4>CSS selector:</h4>
@@ -171,49 +170,27 @@
                 <div class="element_detail">
                     <h4>Code:</h4>
                     <div class="code_block">
-                        <code>&lt;div class="radio_group"&gt;</code>
-                        <code>&nbsp;&nbsp;&lt;div class="radio_group_title"&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="discipline" id="ui_ux" value="ui_ux"&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="ui_ux"&gt;UI/UX Design&lt;/label&gt;</code>
-                        <code>&nbsp;&nbsp;&lt;/div&gt;</code>
-                        <code>&nbsp;&nbsp;&lt;div class="radio_group_detail"&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Designing clear, considered digital experiences.&lt;/p&gt;</code>
+                        <code>&lt;div class="filter_controls" role="radiogroup" aria-label="Filter projects by discipline"&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;div class="radio_group"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="radio_group_title"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="discipline" id="filter_ui_ux" value="ui_ux"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="filter_ui_ux"&gt;UI/UX Design&lt;/label&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code>
                         <code>&nbsp;&nbsp;&lt;/div&gt;</code>
                         <code>&lt;/div&gt;</code>
                     </div>
 
                     <h4>Rendered element:</h4>
-                    <div class="radio_group">
-                        <div class="radio_group_title">
-                            <input type="radio" name="sg_discipline" id="sg_ui_ux" value="ui_ux" checked>
-                            <label for="sg_ui_ux">UI/UX Design</label>
-                        </div>
-                        <div class="radio_group_detail">
-                            <p>Designing clear, considered digital experiences.</p>
-                        </div>
-                    </div>
-                    <div class="radio_group">
-                        <div class="radio_group_title">
-                            <input type="radio" name="sg_discipline" id="sg_game" value="game">
-                            <label for="sg_game">Game Design</label>
-                        </div>
-                        <div class="radio_group_detail">
-                            <p>Building worlds through narrative, mechanics, and play.</p>
-                        </div>
-                    </div>
-                    <div class="radio_group">
-                        <div class="radio_group_title">
-                            <input type="radio" name="sg_discipline" id="sg_illustration" value="illustration">
-                            <label for="sg_illustration">Illustration</label>
-                        </div>
-                        <div class="radio_group_detail">
-                            <p>Expressing ideas through hand-crafted visual storytelling.</p>
-                        </div>
+                    <div class="filter_controls" role="radiogroup" aria-label="Filter projects by discipline">
+                        <div class="radio_group">
+                            <div class="radio_group_title">
+                                <input type="radio" name="sg_discipline" id="sg_ui_ux" value="ui_ux">
+                                <label for="sg_ui_ux">UI/UX Design</label>
+                            </div>
                     </div>
 
                     <h4>CSS selector:</h4>
-                    <small class="css_selector">.radio_group_title</small>
-                    <small class="css_selector">.radio_group_detail</small>
+                    <small class="css_selector">.filter_controls &nbsp;·&nbsp; .radio_group_title</small>
                 </div>
 
 
@@ -226,13 +203,13 @@
                     <h4>Code:</h4>
                     <div class="code_block">
                         <code>&lt;div class="project_list_grid"&gt;</code>
-                        <code>&nbsp;&nbsp;&lt;a class="project_card" href="projects.html"&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;a class="project_card" href="project-dinely.html"&gt;</code>
                         <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="project_card_img"&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="img/dinely_cover.png" alt="Dinely project"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="img/dinely%20assets/dinely%20cover%20photo.png" alt="Dinely"&gt;</code>
                         <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code>
                         <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="project_card_text"&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h4&gt;Dinely&lt;/h4&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;A catering e-commerce experience.&lt;/p&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Dinely&lt;/h3&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Dinely is a mobile app that combines restaurant discovery, personalized recommendations, and table reservations into one seamless experience.&lt;/p&gt;</code>
                         <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code>
                         <code>&nbsp;&nbsp;&lt;/a&gt;</code>
                         <code>&lt;/div&gt;</code>
@@ -242,24 +219,14 @@
                     <div class="project_list_grid project_list_grid_demo">
                         <a class="project_card" href="#">
                             <div class="project_card_img">
-                                <img src="img/background_blur_circle.png" alt="Dinely project">
+                                <img src="img/dinely assets/dinely cover photo.png" alt="Dinely">
                             </div>
                             <div class="project_card_text">
-                                <h4>Dinely</h4>
+                                <h3>Dinely</h3>
                                 <p>Dinely is a mobile app that combines restaurant discovery, personalized recommendations, and table reservations into one seamless experience.</p>
                             </div>
                         </a>
-                        <a class="project_card" href="#">
-                            <div class="project_card_img">
-                                <img src="img/background_blur_circle.png" alt="Wandmaker's Atelier">
-                            </div>
-                            <div class="project_card_text">
-                                <h4>Wandmaker's Atelier</h4>
-                                <p>An interactive game exploring narrative and world-building.</p>
-                            </div>
-                        </a>
                     </div>
-
                     <h4>CSS selector:</h4>
                     <small class="css_selector">.project_card</small>
                     <small class="css_selector">.project_card_img</small>
@@ -286,15 +253,20 @@
 
                             <h4>Code:</h4>
                             <div class="code_block">
-                                <code>@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Manrope:wght@300;400;500;600;700&display=swap');</code>
+                                <code>&lt;h1&gt;Corinthia Regular 400&lt;/h1&gt;</code>
+                                <code>&lt;h2&gt;Cinzel Bold 700&lt;/h2&gt;</code>
+                                <code>&lt;h3&gt;Manrope Bold 700&lt;/h3&gt;</code>
+                                <code>&lt;h4&gt;Manrope Bold 700&lt;/h4&gt;</code>
+                                <code>&lt;p&gt;Manrope Medium 500&lt;/p&gt;</code>
+                                <code>&lt;small&gt;Manrope Regular 400&lt;/small&gt;</code>
                             </div>
 
                             <h4>Rendered element:</h4>
-                            <h1>Corinthia — Display</h1>
-                            <h2>Cinzel- Variable</h2>
-                            <h3>Manrope Medium 500 — labels, h4.</h3>
-                            <h4>Manrope Bold 700 — h2, h3, section headings.</h4>
-                            <small>Manrope Light 300 — input placeholders.</small>
+                            <h1>Corinthia Regular 400</h1>
+                            <h2>Cinzel Bold 700 </h2>
+                            <h3>Manrope Bold 700</h3>
+                            <h4>Manrope Medium 500 </h4>
+                            <small>Manrope Regular 400</small>
 
                             <h4>CSS selector:</h4>
                             <small class="css_selector">--font_display &nbsp;·&nbsp; --font_ui</small>
@@ -310,17 +282,17 @@
                                 <code>&lt;h2&gt;Heading 2&lt;/h2&gt;</code>
                                 <code>&lt;h3&gt;Heading 3&lt;/h3&gt;</code>
                                 <code>&lt;h4&gt;Heading 4&lt;/h4&gt;</code>
-                                <code>&lt;p&gt;Paragraph text&lt;/p&gt;</code>
-                                <code>&lt;small&gt;Small / caption text&lt;/small&gt;</code>
+                                <code>&lt;p&gt;Paragraph&lt;/p&gt;</code>
+                                <code>&lt;small&gt;Small- captions&lt;/small&gt;</code>
                             </div>
 
                             <h4>Rendered element:</h4>
-                            <h1>Lavanya's</h1>
+                            <h1>Heading 1</h1>
                             <h2>Heading 2</h2>
                             <h3>Heading 3</h3>
                             <h4>Heading 4</h4>
-                            <p>Paragraph — I believe good design is felt before it's understood. Clean, considered, and always purposeful.</p>
-                            <small>Small — captions, labels, meta information.</small>
+                            <p>Paragraph </p>
+                            <small>Small- captions</small>
 
                             <h4>CSS selector:</h4>
                             <small class="css_selector">h1 &nbsp;·&nbsp; h2 &nbsp;·&nbsp; h3 &nbsp;·&nbsp; h4 &nbsp;·&nbsp; p &nbsp;·&nbsp; small</small>
@@ -339,18 +311,17 @@
                     <h4>Code:</h4>
                     <div class="code_block">
                         <code>&lt;ol&gt;</code>
-                        <code>&nbsp;&nbsp;&lt;li&gt;Start with curiosity.&lt;/li&gt;</code>
-                        <code>&nbsp;&nbsp;&lt;li&gt;Iterate deliberately.&lt;/li&gt;</code>
-                        <code>&nbsp;&nbsp;&lt;li&gt;Let the work speak.&lt;/li&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;li&gt;Google Fonts &lt;em&gt;Cinzel&lt;/em&gt; from &lt;a class="in_text_link" href="https://fonts.google.com/specimen/Cinzel" target="_blank" rel="noopener"&gt;fonts.google.com/specimen/Cinzel&lt;/a&gt;&lt;/li&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;li&gt;Google Fonts&lt;em&gt;Corinthia&lt;/em&gt; from &lt;a class="in_text_link" href="https://fonts.google.com/specimen/Corinthia" target="_blank" rel="noopener"&gt;fonts.google.com/specimen/Corinthia&lt;/a&gt;&lt;/li&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;li&gt;Google Fonts &lt;em&gt;Manrope&lt;/em&gt; from &lt;a class="in_text_link" href="https://fonts.google.com/specimen/Manrope" target="_blank" rel="noopener"&gt;fonts.google.com/specimen/Manrope&lt;/a&gt;&lt;/li&gt;</code>
                         <code>&lt;/ol&gt;</code>
                     </div>
 
                     <h4>Rendered element:</h4>
                     <ol>
-                        <li>Start with curiosity — explore tools, techniques, and unfamiliar territories.</li>
-                        <li>Iterate deliberately — revisit, refine, and remove what doesn't belong.</li>
-                        <li>Let the work speak — clear presentation over self-promotion.</li>
-                        <li>Stay cohesive — every element belongs to the same visual language.</li>
+                        <li>Google Fonts from <a class="in_text_link" href="https://fonts.google.com/specimen/Cinzel" target="_blank" rel="noopener">fonts.google.com/specimen/Cinzel</a></li>
+                        <li>Google Fonts from <a class="in_text_link" href="https://fonts.google.com/specimen/Corinthia" target="_blank" rel="noopener">fonts.google.com/specimen/Corinthia</a></li>
+                        <li>Google Fonts from <a class="in_text_link" href="https://fonts.google.com/specimen/Manrope" target="_blank" rel="noopener">fonts.google.com/specimen/Manrope</a></li>
                     </ol>
 
                     <h4>CSS selector:</h4>
@@ -364,7 +335,7 @@
         <!-- 3. COMBINED ELEMENTS -->
         <section id="combined_elements">
             <div class="sg_section">
-                <h2>03 — Combined Elements</h2>
+                <h2>Combined Elements</h2>
 
 
                 <!-- Main navigation -->
@@ -376,29 +347,35 @@
                     <h4>Code:</h4>
                     <div class="code_block">
                         <code>&lt;header&gt;</code>
-                        <code>&nbsp;&nbsp;&lt;nav class="header_bar"&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="header_logo" href="index.html"&gt;&lt;h1&gt;Lavanya's&lt;/h1&gt;&lt;/a&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="header_nav_bar"&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="index.html"&gt;Home&lt;/a&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="about.html"&gt;About Me&lt;/a&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="projects.html"&gt;Projects&lt;/a&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="contact.html"&gt;Contact&lt;/a&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code>
+                        <code>&nbsp;&nbsp;&lt;nav class="header_bar" aria-label="Primary"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="header_logo" href="index.html"&gt;&lt;span class="brand_mark"&gt;Lavanya's&lt;/span&gt;&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;details class="nav_disclosure" open&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;summary class="nav_toggle"&gt;Menu&lt;/summary&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="header_nav_bar"&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="index.html" aria-current="page"&gt;Home&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="about.html"&gt;About Me&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="projects.html"&gt;Projects&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="contact.html"&gt;Contact&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/details&gt;</code>
                         <code>&nbsp;&nbsp;&lt;/nav&gt;</code>
                         <code>&lt;/header&gt;</code>
                     </div>
 
                     <h4>Rendered element:</h4>
-                    <nav class="header_bar header_bar_demo">
-                        <a class="header_logo" href="#">
-                            <h1 class="header_logo_h1_demo">Lavanya's</h1>
+                    <nav class="header_bar header_bar_demo" aria-label="Primary">
+                        <a class="header_logo" href="index.html">
+                            <span class="brand_mark">Lavanya's</span>
                         </a>
-                        <div class="header_nav_bar">
-                            <a class="nav_link" href="#">Home</a>
-                            <a class="nav_link" href="#">About Me</a>
-                            <a class="nav_link" href="#">Projects</a>
-                            <a class="nav_link" href="#">Contact</a>
-                        </div>
+                        <details class="nav_disclosure" open>
+                            <summary class="nav_toggle">Menu</summary>
+                            <div class="header_nav_bar">
+                                <a class="nav_link" href="index.html" aria-current="page">Home</a>
+                                <a class="nav_link" href="about.html">About Me</a>
+                                <a class="nav_link" href="projects.html">Projects</a>
+                                <a class="nav_link" href="contact.html">Contact</a>
+                            </div>
+                        </details>
                     </nav>
 
                     <h4>CSS selector:</h4>
@@ -416,29 +393,29 @@
                     <div class="project_list_grid">
                         <a class="project_card" href="#">
                             <div class="project_card_img">
-                                <img src="img/background_blur_circle.png" alt="Dinely">
+                                <img src="img/dinely assets/dinely cover photo.png" alt="Dinely">
                             </div>
                             <div class="project_card_text">
-                                <h4>Dinely</h4>
-                                <p>A catering e-commerce experience designed for seamless event ordering.</p>
+                                <h3>Dinely</h3>
+                                <p>Dinely is a mobile app that combines restaurant discovery, personalized recommendations, and table reservations into one seamless experience.</p>
                             </div>
                         </a>
                         <a class="project_card" href="#">
                             <div class="project_card_img">
-                                <img src="img/background_blur_circle.png" alt="Wandmaker's Atelier">
+                                <img src="img/wandmaker's atelier assets/wandmakers_atelier cover photo.png" alt="Wandmaker's Atelier">
                             </div>
                             <div class="project_card_text">
-                                <h4>Wandmaker's Atelier</h4>
-                                <p>An interactive game exploring narrative, craft, and world-building.</p>
+                                <h3>Wandmaker's Atelier</h3>
+                                <p>An interactive wand-crafting simulation built in Java, featuring animations and design patterns to make every user's choices meaningfully shape their final outcome.</p>
                             </div>
                         </a>
                         <a class="project_card" href="#">
                             <div class="project_card_img">
-                                <img src="img/background_blur_circle.png" alt="Project 3">
+                                <img src="img/journey to you assets/journey_to_you_cover_photo.png" alt="Journey to You">
                             </div>
                             <div class="project_card_text">
-                                <h4>Project Name</h4>
-                                <p>A short description of the project and its intent.</p>
+                                <h3>Journey to You</h3>
+                                <p>A 2D platformer game in Java where every level, enemy, and power-up is a metaphor for long-distance love.</p>
                             </div>
                         </a>
                     </div>
@@ -454,38 +431,46 @@
                 </div>
 
                 <div class="element_detail">
-                    <h4>Rendered element:</h4>
-                    <div class="project_detail_grid">
-                        <div class="project_detail_image position_static">
-                            <img src="img/background_blur_circle.png" alt="Project detail image">
-                        </div>
-                        <div class="project_detail_info">
-                            <h3>Dinely</h3>
-                            <p>A catering e-commerce platform designed to make event ordering feel as considered as the food itself.</p>
-                            <div class="radio_group">
-                                <div class="radio_group_title">
-                                    <input type="radio" name="sg_project" id="sg_web" value="web" checked>
-                                    <label for="sg_web">Web Application</label>
-                                </div>
-                            </div>
-                            <div class="radio_group">
-                                <div class="radio_group_title">
-                                    <input type="radio" name="sg_project" id="sg_mobile" value="mobile">
-                                    <label for="sg_mobile">Mobile View</label>
-                                </div>
-                            </div>
-                            <div class="button_group">
-                                <a class="primary_button" href="#">
-                                    View Project
-                                    <img class="btn_arrow" src="img/right_arrow.png" alt="">
-                                </a>
-                                <a class="secondary_button" href="#">Back</a>
-                            </div>
-                        </div>
-                    </div>
+                <h4>Dinely</h4>
+              <div class="project_banner">
+            <img src="img/dinely assets/dinely screen stack.png" alt="Dinely cover image placeholder"
+                loading="eager" width="1200" height="675">
+        </div>
+
+        <section class="page_section" aria-labelledby="process_heading">
+            <h4>Process</h4>
+            <div class="process_grid">
+                <div class="project_prose">
+                    <p>Dinely is a mobile app that helps users discover nearby restaurants, browse menus, and reserve tables all in one place. The app personalizes recommendations based on dietary restrictions and cuisine preferences, combining real-time restaurant data with a seamless reservation experience. It is built with JavaScript and React, and tested on Expo Go.</p>
+                    <p>I designed and implemented the end-to-end authentication flow using Firebase Authentication. This included sign-in, sign-up, password reset, and a four-step onboarding process that collected the user's name, dietary restrictions, cuisine preferences, and login credentials. Furthermore, I set up and managed the cloud database layer responsible for persisting user profiles beyond a single device session. Dietary and cuisine preferences, profile edits, and account details are all synced to Firestore in real time, giving users a consistent experience across logins.</p>
+                    <p>Additionally, lightweight on-device data persistence using Async Storage for UI preferences like color theme, appearance mode (light/dark/system), and notification settings was also added. Finally, I integrated native camera access to allow users to take and upload a profile photo directly from their device. Handled permission requests, image capture, and local storage of the selected image so it persists in the user's profile view.</p>
+                    <p>One of our main challenges was local data management for reservations. Reservation data was originally stored on-device without being tied to a specific authenticated user, so records were shared across the app instance instead of being separated by account. When one user logged out and another logged in on the same device, the second user could still see reservations created by the first. This was a data isolation issue, since reservations should only belong to the account that created them.
+                        To fix this, we updated the reservation system in reservationsDb.js so each reservation is stored together with the currently authenticated user's unique ID. Whenever reservations are loaded, edited, or deleted, the app now only accesses records that match the logged-in user. This made reservation data scoped per account instead of shared across the device, which made the system more secure, more accurate, and more consistent with how users expect a personalized app to behave.
+                        Another challenge was using GitHub for the first time. Early on, we both worked directly on the main branch, which caused frequent merge conflicts and was confusing to manage. Over time, we learned to create our own branches to work in and push changes from there, which significantly reduced merge conflicts going forward.</p>
+                    <p>The final app delivered a fully functional, personalized dining discovery experience with real authentication, cloud-synced profiles, local data persistence, and native camera support, all with a clean, polished, and easy-to-navigate design.</p>
+                </div>
+                <aside class="project_sketches">
+                    <figure>
+                        <img src="img/dinely%20assets/dinely%20sketches.png" alt="Dinely early sketches">
+                        <figcaption>Early hand-drawn sketches</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/dinely%20assets/dinely_challengesa.png" alt="Dinely challenges and solutions">
+                        <figcaption>Challenged faced and it's solution</figcaption>
+                    </figure>
+                </aside>
+            </div>
+        </section>
+
+        <section class="page_section" aria-labelledby="media_heading">
+            <h4>Walkthrough</h4>
+            <div class="video_embed">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TEKRgouH18w?si=Y_AatEoO1gafLNue" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
 
                     <h4>CSS selector:</h4>
-                    <small class="css_selector">.project_detail_grid &nbsp;·&nbsp; .project_detail_image &nbsp;·&nbsp; .project_detail_info</small>
+                    <small class="css_selector">.back_link &nbsp;·&nbsp; .project_banner &nbsp;·&nbsp; .process_grid &nbsp;·&nbsp; .project_prose &nbsp;·&nbsp; .project_sketches &nbsp;·&nbsp; .video_embed</small>
                 </div>
 
 
@@ -500,30 +485,57 @@
                         <div class="contact_form">
                             <div class="form_group">
                                 <label for="sg_c_name">Full Name</label>
-                                <input id="sg_c_name" type="text" placeholder="Your name">
+                                <input id="sg_c_name" type="text" placeholder="Your name" aria-describedby="sg_c_name_error">
+                                <span class="field_error" id="sg_c_name_error"></span>
                             </div>
                             <div class="form_group">
                                 <label for="sg_c_email">Email Address</label>
-                                <input id="sg_c_email" type="email" placeholder="your@email.com">
+                                <input id="sg_c_email" type="email" placeholder="your@email.com" aria-describedby="sg_c_email_error">
+                                <span class="field_error" id="sg_c_email_error"></span>
                             </div>
                             <div class="form_group">
                                 <label for="sg_c_msg">Message</label>
-                                <textarea id="sg_c_msg" rows="4" placeholder="What's on your mind?"></textarea>
+                                <textarea id="sg_c_msg" rows="4" placeholder="What's on your mind?" aria-describedby="sg_c_msg_error"></textarea>
+                                <span class="field_error" id="sg_c_msg_error"></span>
                             </div>
                             <div class="button_group">
-                                <button class="primary_button">Send Message</button>
-                                <button class="secondary_button">Reset</button>
+                                <button class="primary_button" type="submit">
+                                    Send Message
+                                </button>
+                                <button class="secondary_button" type="reset">Reset</button>
                             </div>
+                            <p class="form_status" id="sg_form_status" role="status" aria-live="polite"></p>
                         </div>
                         <div class="contact_info">
-                            <h4>Let's connect</h4>
+                            <h3>Let's connect</h3>
                             <p>Whether it's a project, a question, or just a conversation about design — I'd love to hear from you.</p>
-                            <p><a class="in_text_link" href="mailto:lavanya@sfu.ca">lavanya@sfu.ca</a></p>
+                            <div class="email_row">
+                                <img class="contact_icon" src="img/email.png" alt="">
+                                <a class="in_text_link" href="mailto:lavanya@sfu.ca">lavanya@sfu.ca</a>
+                                <button class="secondary_button copy_email_btn" type="button"
+                                    data-copy="lavanya@sfu.ca" aria-label="Copy email address">Copy</button>
+                            </div>
+
+                            <div class="email_row">
+                                <img class="contact_icon" src="img/Instagram.png" alt="">
+                                <a class="in_text_link" href="https://instagram.com/lavanyepp" target="_blank"
+                                    rel="noopener">@lavanyepp</a>
+                            </div>
+
+                            <div class="email_row">
+                                <img class="contact_icon" src="img/Phone.png" alt="">
+                                <a class="in_text_link" href="tel:+11234567890">+1 (123)-456-789</a>
+                            </div>
+
+                            <div class="email_row">
+                                <img class="contact_icon" src="img/PDF.png" alt="">
+                                <a class="in_text_link" href="files/Lavanya_CV.pdf" download>Lavanya_CV.pdf</a>
+                            </div>
                         </div>
                     </div>
 
                     <h4>CSS selector:</h4>
-                    <small class="css_selector">.contact_grid &nbsp;·&nbsp; .contact_form &nbsp;·&nbsp; .contact_info &nbsp;·&nbsp; .form_group &nbsp;·&nbsp; .button_group</small>
+                    <small class="css_selector">.contact_grid &nbsp;·&nbsp; .contact_form &nbsp;·&nbsp; .contact_info &nbsp;·&nbsp; .form_group &nbsp;·&nbsp; .button_group &nbsp;·&nbsp; .email_row &nbsp;·&nbsp; .field_error &nbsp;·&nbsp; .form_status</small>
                 </div>
 
 
@@ -540,7 +552,7 @@
                         <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="footer_logo" href="index.html"&gt;&lt;span class="brand_mark"&gt;Lavanya's&lt;/span&gt;&lt;/a&gt;</code>
                         <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav class="footer_nav" aria-label="Footer"&gt;</code>
                         <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="contact.html"&gt;Contact&lt;/a&gt;</code>
-                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="style_guide.html"&gt;Style Guide&lt;/a&gt;</code>
+                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="style_guide.html" aria-current="page"&gt;Style Guide&lt;/a&gt;</code>
                         <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="nav_link" href="citations.html"&gt;Citations&lt;/a&gt;</code>
                         <code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;</code>
                         <code>&nbsp;&nbsp;&lt;/div&gt;</code>
@@ -550,11 +562,11 @@
                     <h4>Rendered element:</h4>
                     <div class="footer_bar footer_bar_demo">
                         <a class="footer_logo" href="#">
-                            <h1 class="footer_logo_h1_demo">Lavanya's</h1>
+                            <span class="brand_mark">Lavanya's</span>
                         </a>
                         <div class="footer_nav">
                             <a class="nav_link" href="#">Contact</a>
-                            <a class="nav_link" href="#">Style Guide</a>
+                            <a class="nav_link" href="#" aria-current="page">Style Guide</a>
                             <a class="nav_link" href="#">Citations</a>
                         </div>
                     </div>
@@ -580,34 +592,34 @@
 
                 <div class="element_detail">
                     <div class="ethos_block">
-                        <p>I'm Lavanya, a third-year Interactive Arts and Technology student at SFU with a love for UI/UX and game design. I believe good design is felt before it's understood — clean, considered, and always purposeful. I'm constantly exploring new tools, techniques, and creative territories, because curiosity is what keeps my work honest. Beyond screens, I pour that same energy into hobbies and art that keep me inspired. Scroll through to catch a glimpse. :D</p>
+                    <p>I'm a 3rd year student studying Interactive Arts and Technology at Simon Fraser
+                    University, and am looking for work opportunities related to UI/UX Design and Game Design.</p>
+                    <p>I love to integrate and familiarise myself with different techniques and
+                    applications of design, and am proficient in Figma, HTML, CSS, Java, and Javascript as well as Adobe Creative Cloud and Microsoft Office Suite. As someone who has always loved all sorts of art and experimented a lot, I hope to
+                    continue to explore different ways to express myself and my interests!</p>
+                    <p>P.S. I also immerse myself in various hobbies and creative pass times, some of
+                    which you can scroll through :D</p>
                     </div>
 
-                    <h4>Ethos keywords:</h4>
+                    <h3>Ethos keywords:</h3>
                     <div class="ethos_keywords">
                         <div class="ethos_keyword_item">
                             <h4>Clear</h4>
-                            <p>Every element earns its place. Nothing is decorative for its own sake.</p>
                         </div>
                         <div class="ethos_keyword_item">
                             <h4>Minimal</h4>
-                            <p>Breathing room is a design decision, not an absence of content.</p>
                         </div>
                         <div class="ethos_keyword_item">
                             <h4>Organised</h4>
-                            <p>Consistent structure guides the eye — hierarchy over decoration.</p>
                         </div>
                         <div class="ethos_keyword_item">
                             <h4>Intentional</h4>
-                            <p>Deliberate choices in spacing, type, and tone. Nothing accidental.</p>
                         </div>
                         <div class="ethos_keyword_item">
                             <h4>Soft-spoken</h4>
-                            <p>The work speaks first. The presentation doesn't compete.</p>
                         </div>
                         <div class="ethos_keyword_item">
                             <h4>Cohesive</h4>
-                            <p>Everything belongs to the same visual language — nothing out of place.</p>
                         </div>
                     </div>
                 </div>
@@ -621,8 +633,8 @@
                 <div class="element_detail">
                     <div class="colour_palette_grid">
                         <div class="colour_swatch">
-                            <div class="colour_swatch_block colour_swatch_bg"></div>
-                            <small class="colour_swatch_label">#FFFEFE<br>Background</small>
+                            <div class="colour_swatch_block colour_swatch_bg" style="background-color: #F9EDED;"></div>
+                            <small class="colour_swatch_label">#F9EDED<br>Background</small>
                         </div>
                         <div class="colour_swatch">
                             <div class="colour_swatch_block colour_swatch_surface"></div>
@@ -638,7 +650,27 @@
                         </div>
                         <div class="colour_swatch">
                             <div class="colour_swatch_block colour_swatch_muted"></div>
-                            <small class="colour_swatch_label">#D9BFBF<br>Muted / Border</small>
+                            <small class="colour_swatch_label">#D9BFBF<br>Muted Border</small>
+                        </div>
+                        <div class="colour_swatch">
+                            <div class="colour_swatch_block" style="background-color: rgba(141, 111, 111, 0.15);"></div>
+                            <small class="colour_swatch_label">rgba(141, 111, 111, 0.15)<br>Border</small>
+                        </div>
+                        <div class="colour_swatch">
+                            <div class="colour_swatch_block" style="background-color: rgba(250, 249, 249, 0.50);"></div>
+                            <small class="colour_swatch_label">rgba(250, 249, 249, 0.50)<br>Glass Project Card Background</small>
+                        </div>
+                        <div class="colour_swatch">
+                            <div class="colour_swatch_block" style="background-color: rgba(255, 255, 255, 0.65);"></div>
+                            <small class="colour_swatch_label">rgba(255, 255, 255, 0.65)<br>Glass Border</small>
+                        </div>
+                        <div class="colour_swatch">
+                            <div class="colour_swatch_block" style="background-color: rgba(204, 168, 168, 0.10);"></div>
+                            <small class="colour_swatch_label">rgba(204, 168, 168, 0.10)<br>Hover Background</small>
+                        </div>
+                        <div class="colour_swatch">
+                            <div class="colour_swatch_block" style="background-color: rgba(217, 191, 191, 0.18);"></div>
+                            <small class="colour_swatch_label">rgba(217, 191, 191, 0.18)<br>Code Background</small>
                         </div>
                     </div>
                 </div>
@@ -650,7 +682,7 @@
                 </div>
 
                 <div class="element_detail">
-                    <p>Custom minimal iconography — arrows for navigation and directional cues, a diamond as an interactive hover accent on project cards.</p>
+                    <p>Custom minimal iconography — arrows for navigation and directional cues, a diamond as an interactive hover accent on project cards, and contact icons used on the Contact page.</p>
                     <div class="icon_row mt_md">
                         <div class="icon_item">
                             <img src="img/left_arrow.png" alt="Left arrow">
@@ -664,6 +696,22 @@
                             <img src="img/hover_diamond.png" alt="Hover diamond accent">
                             <small>Hover accent</small>
                         </div>
+                        <div class="icon_item">
+                            <img src="img/email.png" alt="Email icon">
+                            <small>Email icon</small>
+                        </div>
+                        <div class="icon_item">
+                            <img src="img/Instagram.png" alt="Instagram icon">
+                            <small>Instagram icon</small>
+                        </div>
+                        <div class="icon_item">
+                            <img src="img/Phone.png" alt="Phone icon">
+                            <small>Phone icon</small>
+                        </div>
+                        <div class="icon_item">
+                            <img src="img/PDF.png" alt="PDF/download icon">
+                            <small>Download PDF icon</small>
+                        </div>
                     </div>
                 </div>
 
@@ -674,11 +722,105 @@
                 </div>
 
                 <div class="element_detail">
-                    <p>All project images sit inside cards with a 13px corner radius and subtle scale on hover. The fixed blush blur circle behind all content creates layered atmospheric depth without visual noise — a signature element of this portfolio.</p>
-                    <div class="mt_md">
-                        <img src="img/background_blur_circle.png" alt="Background blur atmosphere" class="demo_blur_image">
+                    <p>All images have been created or hand-drawn by me</p>
+                    <div class="photo_grid_demo mt_md">
+                        <figure>
+                            <img src="img/background_blur_circle.png" alt="a soft, blurred pink circular gradient used as a background accent throughout the site">
+                            <figcaption>Background blur circle</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/left_arrow.png" alt="a thin triangular arrow icon pointing left, used for carousel and back navigation">
+                            <figcaption>Left arrow</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/right_arrow.png" alt="a thin triangular arrow icon pointing right, used for carousel navigation and button accents">
+                            <figcaption>Right arrow</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/hover_diamond.png" alt="a small soft pink diamond shape used as a hover accent on project cards">
+                            <figcaption>Hover accent</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/email.png" alt="a flat envelope icon representing email, used on the contact page">
+                            <figcaption>Email icon</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/Instagram.png" alt="a flat camera-shaped Instagram icon, used on the contact page">
+                            <figcaption>Instagram icon</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/Phone.png" alt="a flat phone receiver icon, used on the contact page">
+                            <figcaption>Phone icon</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/PDF.png" alt="a flat document icon labelled PDF, used as the resume download icon on the contact page">
+                            <figcaption>PDF/download icon</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/lavanya.jpeg" alt="photo of Lavanya in the snow wearing a beanie and a cream puffer jacket">
+                            <figcaption>Portrait</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/matcha.JPG" alt="iced jasmine osmanthus matcha on a wooden table">
+                            <figcaption>Making and trying out new matcha</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/photography.jpeg" alt="photo of a boat during sunset to showcase photography skills">
+                            <figcaption>Photography</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/art.JPG" alt="An art piece of a cat in the shape of a fried egg by me as a hobby">
+                            <figcaption>Making art</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/food.jpeg" alt="A food photo to showcase cooking hobby. it shows an open quesadilla with lettuce, hummus, paneer and guacamole on each side">
+                            <figcaption>Cooking</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/sky.JPG" alt="a wide photo of a cloudy sky at golden hour, taken as part of my photography hobby">
+                            <figcaption>Sky</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/dinely%20assets/dinely%20cover%20photo.png" alt="cover image for the Dinely project showing the app's main interface">
+                            <figcaption>Dinely cover photo</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/dinely%20assets/dinely%20screen%20stack.png" alt="a stack of multiple Dinely app screens showing the onboarding and main flows">
+                            <figcaption>Dinely screen stack</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/dinely%20assets/dinely%20sketches.png" alt="early hand-drawn wireframe sketches for the Dinely app">
+                            <figcaption>Early hand-drawn sketches</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/journey%20to%20you%20assets/journey_to_you_cover_photo.png" alt="cover image for the Journey to You platformer game">
+                            <figcaption>Journey to You cover photo</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/journey%20to%20you%20assets/journey%20to%20you%20assets.png" alt="concept art and hand-drawn assets for the Journey to You game">
+                            <figcaption>Concept art and hand-drawn assets</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/wandmaker%27s%20atelier%20assets/wandmakers_atelier%20cover%20photo.png" alt="cover image for the Wandmaker's Atelier wand-crafting simulation">
+                            <figcaption>Wandmaker's Atelier cover photo</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/wandmaker%27s%20atelier%20assets/wandmaker%27s%20atelier%20assets.png" alt="concept art and hand-drawn assets for Wandmaker's Atelier">
+                            <figcaption>Concept art and hand-drawn assets</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/the%20forbidden%20door%20assets/the%20forbidden%20door%20cover%20photo.png" alt="cover image for The Forbidden Door dark fiction comic">
+                            <figcaption>The Forbidden Door cover photo</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/the%20forbidden%20door%20assets/storyboard.png" alt="storyboard panels for The Forbidden Door comic">
+                            <figcaption>Storyboard</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/the%20forbidden%20door%20assets/the%20forbidden%20door%20assets.png" alt="hand-drawn production assets for The Forbidden Door comic">
+                            <figcaption>Hand-drawn production assets</figcaption>
+                        </figure>
                     </div>
-                    <small class="display_block">Background blur circle — position: fixed, opacity 0.55, sits behind all content on scroll.</small>
                 </div>
 
             </div>
@@ -695,6 +837,12 @@
                     <h3><a class="in_text_link" href="about.html">About Me</a></h3>
                     <h3><a class="in_text_link" href="projects.html">Projects</a></h3>
                     <h3><a class="in_text_link" href="contact.html">Contact</a></h3>
+                    <h3><a class="in_text_link" href="project-dinely.html">Project — Dinely</a></h3>
+                    <h3><a class="in_text_link" href="project-wandmaker.html">Project — Wandmaker's Atelier</a></h3>
+                    <h3><a class="in_text_link" href="project-three.html">Project — Journey to You</a></h3>
+                    <h3><a class="in_text_link" href="project-four.html">Project — The Forbidden Door</a></h3>
+                    <h3><a class="in_text_link" href="citations.html">Citations</a></h3>
+                    <h3><a class="in_text_link" href="style_guide.html" aria-current="page">Style Guide</a></h3>
                 </div>
             </div>
         </section>
@@ -707,11 +855,11 @@
 
                 <div class="element_detail">
                     <ol>
-                        <li>Google Fonts. (n.d.). <em>Cinzel</em>. Retrieved from <a class="in_text_link" href="https://fonts.google.com/specimen/Cinzel" target="_blank">fonts.google.com/specimen/Cinzel</a></li>
-                        <li>Google Fonts. (n.d.). <em>Corinthia</em>. Retrieved from <a class="in_text_link" href="https://fonts.google.com/specimen/Corinthia" target="_blank">fonts.google.com/specimen/Corinthia</a></li>
-                        <li>Google Fonts. (n.d.). <em>Manrope</em>. Retrieved from <a class="in_text_link" href="https://fonts.google.com/specimen/Manrope" target="_blank">fonts.google.com/specimen/Manrope</a></li>
+                        <li>Google Fonts. (n.d.). <em>Cinzel</em>. Retrieved from <a class="in_text_link" href="https://fonts.google.com/specimen/Cinzel" target="_blank" rel="noopener">fonts.google.com/specimen/Cinzel</a></li>
+                        <li>Google Fonts. (n.d.). <em>Corinthia</em>. Retrieved from <a class="in_text_link" href="https://fonts.google.com/specimen/Corinthia" target="_blank" rel="noopener">fonts.google.com/specimen/Corinthia</a></li>
+                        <li>Google Fonts. (n.d.). <em>Manrope</em>. Retrieved from <a class="in_text_link" href="https://fonts.google.com/specimen/Manrope" target="_blank" rel="noopener">fonts.google.com/specimen/Manrope</a></li>
                         <li>Custom icons and assets — arrows and hover diamond — created for this portfolio.</li>
-                        <li>https://support.google.com/youtube/answer/171780?hl=en to learn hwo to embed a youtube video of project demo in projects detail page</li>
+                        <li>Google Support. (n.d.). <em>Embed videos &amp; playlists</em>. Retrieved from <a class="in_text_link" href="https://support.google.com/youtube/answer/171780?hl=en" target="_blank" rel="noopener">support.google.com/youtube/answer/171780</a></li>
                     </ol>
                 </div>
             </div>

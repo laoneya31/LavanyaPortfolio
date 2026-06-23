@@ -15,8 +15,6 @@
     <!-- Skip link — first focusable element, jumps to <main> -->
     <a class="skip_link" href="#main_content">Skip to main content</a>
 
-    <!-- Reading progress bar (enhanced by JS; 0 width without it) -->
-    <div class="reading_progress" aria-hidden="true"></div>
 
     <!-- Fixed blush blur — stays centred behind all content on scroll -->
     <div class="bg_blur"></div>
@@ -61,7 +59,9 @@
                     <p>Dinely is a mobile app that helps users discover nearby restaurants, browse menus, and reserve tables all in one place. The app personalizes recommendations based on dietary restrictions and cuisine preferences, combining real-time restaurant data with a seamless reservation experience. It is built with JavaScript and React, and tested on Expo Go.</p>
                     <p>I designed and implemented the end-to-end authentication flow using Firebase Authentication. This included sign-in, sign-up, password reset, and a four-step onboarding process that collected the user's name, dietary restrictions, cuisine preferences, and login credentials. Furthermore, I set up and managed the cloud database layer responsible for persisting user profiles beyond a single device session. Dietary and cuisine preferences, profile edits, and account details are all synced to Firestore in real time, giving users a consistent experience across logins.</p>
                     <p>Additionally, lightweight on-device data persistence using Async Storage for UI preferences like color theme, appearance mode (light/dark/system), and notification settings was also added. Finally, I integrated native camera access to allow users to take and upload a profile photo directly from their device. Handled permission requests, image capture, and local storage of the selected image so it persists in the user's profile view.</p>
-                    <p>Working collaboratively on GitHub for the first time introduced friction early on due to frequent merge conflicts caused by team members committing directly to main. We resolved this by adopting a branch-based workflow, which dramatically reduced conflicts and improved our parallel development process. We also struggled with integrating local and cloud storage, as some properties, like reservations, that were stored locally, would show up across accounts on the same device. We linked all local storage to the cloud using the unique ID, which removed this issue.</p>
+                    <p>One of our main challenges was local data management for reservations. Reservation data was originally stored on-device without being tied to a specific authenticated user, so records were shared across the app instance instead of being separated by account. When one user logged out and another logged in on the same device, the second user could still see reservations created by the first. This was a data isolation issue, since reservations should only belong to the account that created them.
+                        To fix this, we updated the reservation system in reservationsDb.js so each reservation is stored together with the currently authenticated user's unique ID. Whenever reservations are loaded, edited, or deleted, the app now only accesses records that match the logged-in user. This made reservation data scoped per account instead of shared across the device, which made the system more secure, more accurate, and more consistent with how users expect a personalized app to behave.
+                        Another challenge was using GitHub for the first time. Early on, we both worked directly on the main branch, which caused frequent merge conflicts and was confusing to manage. Over time, we learned to create our own branches to work in and push changes from there, which significantly reduced merge conflicts going forward.</p>
                     <p>The final app delivered a fully functional, personalized dining discovery experience with real authentication, cloud-synced profiles, local data persistence, and native camera support, all with a clean, polished, and easy-to-navigate design.</p>
                 </div>
                 <aside class="project_sketches">
@@ -69,13 +69,16 @@
                         <img src="img/dinely%20assets/dinely%20sketches.png" alt="Dinely early sketches">
                         <figcaption>Early hand-drawn sketches</figcaption>
                     </figure>
+                    <figure>
+                        <img src="img/dinely%20assets/dinely_challengesa.png" alt="Dinely challenges and solutions">
+                        <figcaption>Challenged faced and it's solution</figcaption>
+                    </figure>
                 </aside>
             </div>
         </section>
 
         <section class="page_section" aria-labelledby="media_heading">
             <h2 id="media_heading">Walkthrough</h2>
-            <!-- Swap VIDEO_ID_HERE for the real YouTube video id -->
             <div class="video_embed">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/TEKRgouH18w?si=Y_AatEoO1gafLNue" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>

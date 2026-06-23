@@ -39,19 +39,12 @@
 
     <main class="page_main" id="main_content">
 
-        <h1>Contact.</h1>
+        <h1>Contact Me</h1>
 
-        <section class="page_section" aria-labelledby="contact_heading">
-            <h2 id="contact_heading">Get in touch</h2>
-
+        <section class="page_section" aria-labelledby="contact_form">
             <div class="contact_grid">
 
-                <!--
-                    Static hosting has no backend, so this defaults to a mailto: fallback.
-                    When deploying somewhere with form handling (e.g. Formspree or Netlify Forms),
-                    swap the action below for your real endpoint, e.g.:
-                        action="https://formspree.io/f/your-id" method="post"
-                -->
+                <!-- Static hosting has no backend, so this form submits via a mailto: fallback. -->
                 <form class="contact_form" action="mailto:lavanya@sfu.ca" method="post"
                     enctype="text/plain">
 
@@ -80,7 +73,6 @@
                     <div class="button_group">
                         <button class="primary_button" type="submit">
                             Send Message
-                            <img class="btn_arrow" src="img/right_arrow.png" alt="">
                         </button>
                         <button class="secondary_button" type="reset">Reset</button>
                     </div>
@@ -110,7 +102,6 @@
                         <a class="in_text_link" href="tel:+11234567890">+1 (123)-456-789</a>
                     </div>
 
-                    <!-- Drop the real Lavanya_CV.pdf into files/ (see files/README.txt) -->
                     <div class="email_row">
                         <img class="contact_icon" src="img/PDF.png" alt="">
                         <a class="in_text_link" href="files/Lavanya_CV.pdf" download>Lavanya_CV.pdf</a>
